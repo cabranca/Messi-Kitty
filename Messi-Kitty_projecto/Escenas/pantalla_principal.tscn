@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dgu5nmwfd1g87"]
 
 [ext_resource type="Script" path="res://Codigo/autoload.gd" id="1_35ret"]
-[ext_resource type="AudioStream" uid="uid://4sootctac88x" path="res://Audio/play_button_click.wav" id="2_u656i"]
+[ext_resource type="AudioStream" path="res://Audio/play_button_click.wav" id="2_u656i"]
 
 [node name="Pantalla_principal" type="Node"]
 script = ExtResource("1_35ret")

@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://dvbbttjxg3ek7"]
 
 [ext_resource type="Script" path="res://Codigo/nivel_1.gd" id="1_33hxw"]
-[ext_resource type="PackedScene" uid="uid://bn3p2jnlqtm4g" path="res://Escenas/basura.tscn" id="2_rsyts"]
-[ext_resource type="AudioStream" uid="uid://dvcha2fkhgc1a" path="res://Audio/golpe_al_caer.mp3" id="3_6jt1v"]
-[ext_resource type="PackedScene" uid="uid://d1m0dvrf00ygc" path="res://Escenas/menu_pausa.tscn" id="3_t8oy6"]
-[ext_resource type="AudioStream" uid="uid://b0teva6wcqtgm" path="res://Audio/chill_music.mp3" id="4_t5bgk"]
+[ext_resource type="PackedScene" uid="uid://c6bwkdx64ojnm" path="res://Escenas/basura.tscn" id="2_rsyts"]
+[ext_resource type="AudioStream" path="res://Audio/golpe_al_caer.mp3" id="3_6jt1v"]
+[ext_resource type="PackedScene" uid="uid://b4ik250edspbw" path="res://Escenas/menu_pausa.tscn" id="3_t8oy6"]
+[ext_resource type="AudioStream" path="res://Audio/chill_music.mp3" id="4_t5bgk"]
 
 [node name="Nivel1" type="Node"]
 script = ExtResource("1_33hxw")
