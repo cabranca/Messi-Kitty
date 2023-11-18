@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bo011soqenu4d"]
+
+[ext_resource type="Script" path="res://Codigo/Basura.gd" id="1_7nby3"]
+[ext_resource type="Texture2D" uid="uid://dwkinx6kjtu6x" path="res://icon.svg" id="2_n6jdy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2s1yh"]
+size = Vector2(12.4, 12.4)
+
+[node name="Basura" type="StaticBody2D"]
+scale = Vector2(5, 5)
+input_pickable = true
+script = ExtResource("1_7nby3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1.90735e-07, -1.90735e-07)
+shape = SubResource("RectangleShape2D_2s1yh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("2_n6jdy")
