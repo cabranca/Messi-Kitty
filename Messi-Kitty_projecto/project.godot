@@ -18,6 +18,11 @@ config/icon="res://icon.svg"
 [autoload]
 
 Autoload="*res://Codigo/autoload.gd"
+Variables="*res://Codigo/variables.gd"
+
+[display]
+
+mouse_cursor/custom_image="res://ArteVisual/ph_CursorGoma.png"
 
 [rendering]
 

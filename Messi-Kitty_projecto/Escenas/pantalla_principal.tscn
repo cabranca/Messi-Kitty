@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgu5nmwfd1g87"]
+[gd_scene load_steps=3 format=3 uid="uid://dgu5nmwfd1g87"]
 
 [ext_resource type="Script" path="res://Codigo/autoload.gd" id="1_35ret"]
+[ext_resource type="Texture2D" uid="uid://co51j80dqenqd" path="res://ArteVisual/ph_logo.png" id="2_e55vy"]
 
 [node name="Pantalla_principal" type="Node2D"]
 script = ExtResource("1_35ret")
@@ -27,18 +28,18 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -382.0
-offset_right = 382.0
-offset_bottom = 650.0
+offset_left = -241.0
+offset_right = 370.0
+offset_bottom = 611.0
+scale = Vector2(0.8, 0.8)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Pantalla/AspectRatioContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Titulo" type="Label" parent="Pantalla/AspectRatioContainer/VBoxContainer"]
+[node name="Titulo" type="TextureRect" parent="Pantalla/AspectRatioContainer/VBoxContainer"]
 layout_mode = 2
-text = "Messi-kitty"
-horizontal_alignment = 1
+texture = ExtResource("2_e55vy")
 
 [node name="BotonInicio" type="Button" parent="Pantalla/AspectRatioContainer/VBoxContainer"]
 layout_mode = 2
