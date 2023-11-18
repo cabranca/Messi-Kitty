@@ -1,12 +1,32 @@
 [gd_scene load_steps=3 format=3 uid="uid://dvbbttjxg3ek7"]
 
 [ext_resource type="Script" path="res://Codigo/nivel_1.gd" id="1_33hxw"]
-[ext_resource type="PackedScene" uid="uid://bo011soqenu4d" path="res://Escenas/basura.tscn" id="2_rsyts"]
+[ext_resource type="PackedScene" uid="uid://bn3p2jnlqtm4g" path="res://Escenas/basura.tscn" id="2_rsyts"]
 
 [node name="Nivel1" type="Node"]
 script = ExtResource("1_33hxw")
 basura_scene = ExtResource("2_rsyts")
 
 [node name="BasuraTimer" type="Timer" parent="."]
+
+[node name="Puntaje" type="Label" parent="."]
+offset_left = 896.0
+offset_top = 32.0
+offset_right = 1009.0
+offset_bottom = 58.0
+scale = Vector2(1.36716, 1.34723)
+text = "PLACEHOLDER"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ContadorBasura" type="Label" parent="."]
+offset_left = 896.0
+offset_top = 72.0
+offset_right = 1009.0
+offset_bottom = 98.0
+scale = Vector2(1.36, 1.28)
+text = "PLACEHOLDER"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [connection signal="timeout" from="BasuraTimer" to="." method="_on_basura_timer_timeout"]

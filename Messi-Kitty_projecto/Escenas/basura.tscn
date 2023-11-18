@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bo011soqenu4d"]
+[gd_scene load_steps=4 format=3 uid="uid://bn3p2jnlqtm4g"]
 
 [ext_resource type="Script" path="res://Codigo/Basura.gd" id="1_7nby3"]
 [ext_resource type="Texture2D" uid="uid://dwkinx6kjtu6x" path="res://icon.svg" id="2_n6jdy"]
