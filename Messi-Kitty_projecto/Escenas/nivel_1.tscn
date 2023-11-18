@@ -1,17 +1,51 @@
-[gd_scene load_steps=7 format=3 uid="uid://dvbbttjxg3ek7"]
+[gd_scene load_steps=10 format=3 uid="uid://dvbbttjxg3ek7"]
 
-[ext_resource type="Script" path="res://Codigo/nivel_1.gd" id="1_33hxw"]
-[ext_resource type="PackedScene" uid="uid://bo011soqenu4d" path="res://Escenas/basura.tscn" id="2_rsyts"]
 [ext_resource type="Texture2D" uid="uid://sybm2flx67bd" path="res://ArteVisual/ph_flechita1.png" id="3_t3muv"]
 [ext_resource type="Texture2D" uid="uid://dl0dyubidp1pn" path="res://ArteVisual/ph_flechita2.png" id="4_a635c"]
 [ext_resource type="Script" path="res://Codigo/Fondo.gd" id="4_lp7fj"]
 [ext_resource type="Texture2D" uid="uid://c082id0ishfdx" path="res://ArteVisual/ph_fondo.png" id="5_dfv6i"]
+[ext_resource type="Script" path="res://Codigo/nivel_1.gd" id="1_33hxw"]
+[ext_resource type="PackedScene" uid="uid://c6bwkdx64ojnm" path="res://Escenas/basura.tscn" id="2_rsyts"]
+[ext_resource type="AudioStream" path="res://Audio/golpe_al_caer.mp3" id="3_6jt1v"]
+[ext_resource type="PackedScene" uid="uid://b4ik250edspbw" path="res://Escenas/menu_pausa.tscn" id="3_t8oy6"]
+[ext_resource type="AudioStream" path="res://Audio/chill_music.mp3" id="4_t5bgk"]
 
 [node name="Nivel1" type="Node"]
 script = ExtResource("1_33hxw")
 basura_scene = ExtResource("2_rsyts")
+menu_pausa_escena = ExtResource("3_t8oy6")
 
 [node name="BasuraTimer" type="Timer" parent="."]
+wait_time = 0.4
+
+[node name="Puntaje" type="Label" parent="."]
+z_index = 1
+offset_left = 896.0
+offset_top = 32.0
+offset_right = 1009.0
+offset_bottom = 58.0
+scale = Vector2(1.36716, 1.34723)
+text = "PLACEHOLDER"
+vertical_alignment = 1
+
+[node name="ContadorBasura" type="Label" parent="."]
+z_index = 1
+offset_left = 896.0
+offset_top = 72.0
+offset_right = 1009.0
+offset_bottom = 98.0
+scale = Vector2(1.36, 1.28)
+text = "PLACEHOLDER"
+vertical_alignment = 1
+
+[node name="CaidaObjeto" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_6jt1v")
+volume_db = -11.19
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_t5bgk")
+volume_db = -13.2
+autoplay = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(1725, 330)

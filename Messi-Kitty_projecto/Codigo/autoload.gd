@@ -12,6 +12,9 @@ func _ready():
 
 
 func _on_boton_inicio_button_down():
+	$PlayButtonClick.play()
+	while $PlayButtonClick.playing:
+		pass
 	get_tree().change_scene_to_file("res://Escenas/nivel_1.tscn")
 
 
