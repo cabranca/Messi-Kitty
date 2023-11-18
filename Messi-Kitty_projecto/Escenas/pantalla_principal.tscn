@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Codigo/autoload.gd" id="1_35ret"]
 [ext_resource type="Texture2D" uid="uid://co51j80dqenqd" path="res://ArteVisual/ph_logo.png" id="2_e55vy"]
-[ext_resource type="AudioStream" path="res://Audio/play_button_click.wav" id="2_u656i"]
+[ext_resource type="AudioStream" uid="uid://4sootctac88x" path="res://Audio/play_button_click.wav" id="2_u656i"]
 
 [node name="Pantalla_principal" type="Node"]
 script = ExtResource("1_35ret")
