@@ -3,6 +3,7 @@ extends Node
 @export var basura_scene: PackedScene
 var puntajePrefix = "Puntaje: "
 var contadorBasuraPrefix = "Basura acumulada: "
+var contadorNuevaBasura = 0
 
 func _ready():
 	new_game()
@@ -42,5 +43,12 @@ func _on_basura_timer_timeout():
 	
 	Variables.contadorBasura += 1
 	
+	# Cada 5 basuras que creo hago que una tenga sonido
+	if contadorNuevaBasura % 5 == 0:
+		$CaidaObjeto.play()
+	contadorNuevaBasura += 1
+	
 	# Agrego el nuevo objeto como hijo del nodo principal
 	add_child(basura)
+	
+	
