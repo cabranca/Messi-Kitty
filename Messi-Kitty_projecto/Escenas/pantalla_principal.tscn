@@ -1,8 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dgu5nmwfd1g87"]
+[gd_scene load_steps=3 format=3 uid="uid://dgu5nmwfd1g87"]
 
 [ext_resource type="Script" path="res://Codigo/autoload.gd" id="1_35ret"]
+[ext_resource type="AudioStream" uid="uid://4sootctac88x" path="res://Audio/play_button_click.wav" id="2_u656i"]
 
-[node name="Pantalla_principal" type="Node2D"]
+[node name="Pantalla_principal" type="Node"]
 script = ExtResource("1_35ret")
 metadata/_edit_vertical_guides_ = [576.0]
 
@@ -47,6 +48,9 @@ text = "Comenzar"
 [node name="BotonCreditos" type="Button" parent="Pantalla/AspectRatioContainer/VBoxContainer"]
 layout_mode = 2
 text = "Créditos"
+
+[node name="PlayButtonClick" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_u656i")
 
 [connection signal="button_down" from="Pantalla/AspectRatioContainer/VBoxContainer/BotonInicio" to="." method="_on_boton_inicio_button_down"]
 [connection signal="button_down" from="Pantalla/AspectRatioContainer/VBoxContainer/BotonCreditos" to="." method="_on_boton_creditos_button_down"]
