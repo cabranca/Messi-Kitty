@@ -1,3 +1,12 @@
-[gd_scene format=3 uid="uid://dvbbttjxg3ek7"]
+[gd_scene load_steps=3 format=3 uid="uid://dvbbttjxg3ek7"]
 
-[node name="Nivel1" type="Node2D"]
+[ext_resource type="Script" path="res://Codigo/nivel_1.gd" id="1_33hxw"]
+[ext_resource type="PackedScene" uid="uid://bo011soqenu4d" path="res://Escenas/basura.tscn" id="2_rsyts"]
+
+[node name="Nivel1" type="Node"]
+script = ExtResource("1_33hxw")
+basura_scene = ExtResource("2_rsyts")
+
+[node name="BasuraTimer" type="Timer" parent="."]
+
+[connection signal="timeout" from="BasuraTimer" to="." method="_on_basura_timer_timeout"]
