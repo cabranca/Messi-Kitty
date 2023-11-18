@@ -34,7 +34,9 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Control/AspectRatioContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
-text = "Nombre1"
+text = "Game desing
+La voz de Mía/Iris M
+Ju Banchik"
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Control/AspectRatioContainer/HBoxContainer"]
 layout_mode = 2
@@ -42,11 +44,20 @@ layout_mode = 2
 [node name="Label" type="Label" parent="Control/AspectRatioContainer/HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_horizontal = 8
-text = "Nombre2"
+text = "Programación
+Cabranca
+Micaela"
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="Control/AspectRatioContainer/HBoxContainer"]
 layout_mode = 2
 
 [node name="Label" type="Label" parent="Control/AspectRatioContainer/HBoxContainer/VBoxContainer3"]
 layout_mode = 2
-text = "Nombre3"
+text = "Arte 
+Emma (fondo/escenario)
+-Eushi/Eugenia Chávez Vlassich (logo, ui)
+-sofia fiandrino (props)
+-Lucrecia(animación)
+- Gaia (cinemática) 
+- Sabrina Avendaño (Pantalla de inicio)
+"

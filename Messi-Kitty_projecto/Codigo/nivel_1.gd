@@ -45,8 +45,8 @@ func _on_basura_timer_timeout():
 	#var tamanio_basura = basura.find_child("Sprite2D").texture.get_size()
 	
 	# Genero una posicion random inicial (probar get_viewport_rect())
-	var xPos = randf() * get_viewport().get_visible_rect().size.x
-	var yPos = randf() * get_viewport().get_visible_rect().size.y
+	var xPos = randf() * $Camera2D/Control/FondoA.size.x
+	var yPos = randf() * $Camera2D/Control/FondoA.size.y
 	
 	# Seteo la posicion a la nueva basura
 	basura.position = Vector2(xPos, yPos)
