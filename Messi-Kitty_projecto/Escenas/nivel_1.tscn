@@ -1,31 +1,35 @@
-[gd_scene load_steps=12 format=3 uid="uid://dvbbttjxg3ek7"]
+[gd_scene load_steps=14 format=3 uid="uid://dvbbttjxg3ek7"]
 
 [ext_resource type="Script" path="res://Codigo/nivel_1.gd" id="1_33hxw"]
 [ext_resource type="PackedScene" uid="uid://c6bwkdx64ojnm" path="res://Escenas/basura.tscn" id="2_rsyts"]
 [ext_resource type="AudioStream" uid="uid://dvcha2fkhgc1a" path="res://Audio/golpe_al_caer.mp3" id="3_6jt1v"]
-[ext_resource type="Texture2D" uid="uid://sybm2flx67bd" path="res://ArteVisual/ph_flechita1.png" id="3_t3muv"]
 [ext_resource type="PackedScene" uid="uid://b4ik250edspbw" path="res://Escenas/menu_pausa.tscn" id="3_t8oy6"]
-[ext_resource type="Texture2D" uid="uid://dl0dyubidp1pn" path="res://ArteVisual/ph_flechita2.png" id="4_a635c"]
+[ext_resource type="Texture2D" uid="uid://bc8kl8engsp1g" path="res://ArteVisual/UI/fondo_posta_boceto.png" id="4_cccpe"]
 [ext_resource type="Script" path="res://Codigo/Fondo.gd" id="4_lp7fj"]
 [ext_resource type="AudioStream" uid="uid://b0teva6wcqtgm" path="res://Audio/chill_music.mp3" id="4_t5bgk"]
 [ext_resource type="Texture2D" uid="uid://bc8kl8engsp1g" path="res://ArteVisual/fondo_posta_boceto.png" id="7_bl8qs"]
 [ext_resource type="Texture2D" uid="uid://juagss4q05fx" path="res://ArteVisual/ph_BarraFondo.png" id="10_x8dvl"]
 [ext_resource type="Texture2D" uid="uid://4bh5xvf5c2l4" path="res://ArteVisual/ph_BarraRelleno.png" id="11_i0av5"]
+[ext_resource type="Texture2D" uid="uid://sybm2flx67bd" path="res://ArteVisual/UI/ph_flechita1.png" id="8_lttj1"]
+[ext_resource type="Texture2D" uid="uid://dl0dyubidp1pn" path="res://ArteVisual/UI/ph_flechita2.png" id="9_7fn21"]
+[ext_resource type="PackedScene" uid="uid://bixtxdklmw80y" path="res://Escenas/messi.tscn" id="10_r3kik"]
+
 
 [node name="Nivel1" type="Node"]
 script = ExtResource("1_33hxw")
 basura_scene = ExtResource("2_rsyts")
 menu_pausa_escena = ExtResource("3_t8oy6")
+messi_escena = ExtResource("10_r3kik")
 
 [node name="BasuraTimer" type="Timer" parent="."]
-wait_time = 0.5
+wait_time = 2.0
 
 [node name="FondoA" type="TextureRect" parent="."]
 offset_left = -1920.0
 offset_right = 3840.0
 offset_bottom = 1080.0
 scale = Vector2(1, 0.999999)
-texture = ExtResource("7_bl8qs")
+texture = ExtResource("4_cccpe")
 
 [node name="CaidaObjeto" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_6jt1v")
@@ -72,8 +76,8 @@ offset_top = 540.0
 offset_right = 122.0
 offset_bottom = 592.0
 grow_vertical = 2
-texture_normal = ExtResource("3_t3muv")
-texture_pressed = ExtResource("4_a635c")
+texture_normal = ExtResource("8_lttj1")
+texture_pressed = ExtResource("9_7fn21")
 
 [node name="FlechaDe" type="TextureButton" parent="Ui"]
 anchors_preset = 6
@@ -87,8 +91,8 @@ offset_right = 1850.0
 offset_bottom = 592.0
 grow_horizontal = 0
 grow_vertical = 2
-texture_normal = ExtResource("3_t3muv")
-texture_pressed = ExtResource("4_a635c")
+texture_normal = ExtResource("8_lttj1")
+texture_pressed = ExtResource("9_7fn21")
 flip_h = true
 
 [node name="BarraBasura" type="TextureProgressBar" parent="Ui"]
