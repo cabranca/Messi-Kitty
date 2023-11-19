@@ -13,7 +13,7 @@ var spawnPositions = [Vector2(-1536, 910), Vector2(-1104, 638), Vector2(-640, 60
 	Vector2(-144, 702), Vector2(176, 848), Vector2(288, 670), Vector2(480, 478), 
 	Vector2(1184, 782), Vector2(1568, 670), Vector2(1344, 506), Vector2(2048, 758), 
 	Vector2(2240, 164), Vector2(2592, 220), Vector2(2592, 622), Vector2(3008, 565)]
-var fakeIndex = 0
+var condicionDerrota = 12
 
 
 func _ready():
@@ -29,9 +29,11 @@ func new_game():
 	$BasuraTimer.start()
 
 	barraBasura = $Ui/BarraBasura
-		
+	barraBasura.max_value = condicionDerrota
+
+
 func _process(delta):
-	if Variables.contadorBasura == 12:
+	if Variables.contadorBasura == condicionDerrota:
 		game_over()	
 	
 	
