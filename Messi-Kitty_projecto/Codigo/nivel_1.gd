@@ -28,7 +28,7 @@ func new_game():
 
 
 func _process(delta):
-	if Variables.contadorBasura == 30:
+	if Variables.contadorBasura == 12:
 		game_over()	
 	
 	
@@ -51,6 +51,7 @@ func update_timer():
 
 func game_over():
 	$BasuraTimer.stop()
+	get_tree().change_scene_to_file("res://Escenas/menu_game_over.tscn")
 
 
 # Cuando el timer llega a cero spawneo a Messi en una posicion de las posibles
