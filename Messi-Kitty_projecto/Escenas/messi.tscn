@@ -1,0 +1,103 @@
+[gd_scene load_steps=22 format=3 uid="uid://bixtxdklmw80y"]
+
+[ext_resource type="Script" path="res://Codigo/messi.gd" id="1_44erm"]
+[ext_resource type="Texture2D" uid="uid://cs33kb80yngwm" path="res://ArteVisual/Animaciones/tirar0000.png" id="1_kfuf6"]
+[ext_resource type="Texture2D" uid="uid://cj17lwbud126a" path="res://ArteVisual/Animaciones/tirar0001.png" id="2_5uuuc"]
+[ext_resource type="Texture2D" uid="uid://dqjk175ijackw" path="res://ArteVisual/Animaciones/rascando0000.png" id="2_lwir4"]
+[ext_resource type="Texture2D" uid="uid://j5e3tl4lqaee" path="res://ArteVisual/Animaciones/rascando0001.png" id="3_gcarn"]
+[ext_resource type="Texture2D" uid="uid://cjjf25p0ql2xt" path="res://ArteVisual/Animaciones/tirar0002.png" id="3_s1x1m"]
+[ext_resource type="Texture2D" uid="uid://dn8hlxhcagjge" path="res://ArteVisual/Animaciones/tirar0003.png" id="4_c0be3"]
+[ext_resource type="Texture2D" uid="uid://ba452jvnnxvbg" path="res://ArteVisual/Animaciones/rascando0002.png" id="4_ysdac"]
+[ext_resource type="Texture2D" uid="uid://c51ls7i2jvyl7" path="res://ArteVisual/Animaciones/tirar0004.png" id="5_u7mge"]
+[ext_resource type="Texture2D" uid="uid://bg4q88wkpar0m" path="res://ArteVisual/Animaciones/rascando0003.png" id="5_v3116"]
+[ext_resource type="Texture2D" uid="uid://bph0opegij34x" path="res://ArteVisual/Animaciones/rascando0004.png" id="6_fm727"]
+[ext_resource type="Texture2D" uid="uid://cqcd0p66ts4h4" path="res://ArteVisual/Animaciones/tirar0005.png" id="6_gjg5m"]
+[ext_resource type="Texture2D" uid="uid://cphbd0qtfnqdn" path="res://ArteVisual/Animaciones/rascando0005.png" id="7_0i2fu"]
+[ext_resource type="Texture2D" uid="uid://bp6riq5yxyegi" path="res://ArteVisual/Animaciones/tirar0006.png" id="7_rrxsr"]
+[ext_resource type="Texture2D" uid="uid://d2noe82oyoehf" path="res://ArteVisual/Animaciones/rascando0006.png" id="8_vd23c"]
+[ext_resource type="Texture2D" uid="uid://c4vbknyhnfrfv" path="res://ArteVisual/Animaciones/tirar0007.png" id="8_xi73m"]
+[ext_resource type="Texture2D" uid="uid://d3bsthn3qq3hr" path="res://ArteVisual/Animaciones/rascando0007.png" id="9_l50a6"]
+[ext_resource type="Texture2D" uid="uid://cnxbet3ycffe3" path="res://ArteVisual/Animaciones/rascando0008.png" id="10_6l3nu"]
+[ext_resource type="Texture2D" uid="uid://lhjq822ptcvg" path="res://ArteVisual/Animaciones/rascando0009.png" id="11_r2xn2"]
+[ext_resource type="Texture2D" uid="uid://bp0bdb4wopi4l" path="res://ArteVisual/Animaciones/rascando0010.png" id="12_e40h0"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mqihr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_lwir4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_gcarn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ysdac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_v3116")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fm727")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0i2fu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_vd23c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_l50a6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6l3nu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_r2xn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_e40h0")
+}],
+"loop": true,
+"name": &"rascando",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("1_kfuf6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_5uuuc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_s1x1m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_c0be3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_u7mge")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_gjg5m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_rrxsr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_xi73m")
+}],
+"loop": true,
+"name": &"tirando",
+"speed": 5.0
+}]
+
+[node name="Messi" type="Area2D"]
+script = ExtResource("1_44erm")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
+sprite_frames = SubResource("SpriteFrames_mqihr")
+animation = &"rascando"
+frame_progress = 0.71044
+
+[connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]

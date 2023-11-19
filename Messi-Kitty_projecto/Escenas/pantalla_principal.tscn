@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://dgu5nmwfd1g87"]
 
 [ext_resource type="Script" path="res://Codigo/autoload.gd" id="1_35ret"]
-[ext_resource type="Texture2D" uid="uid://co51j80dqenqd" path="res://ArteVisual/ph_logo.png" id="2_e55vy"]
+[ext_resource type="Texture2D" uid="uid://co51j80dqenqd" path="res://ArteVisual/UI/ph_logo.png" id="2_7gjvd"]
 [ext_resource type="AudioStream" uid="uid://4sootctac88x" path="res://Audio/play_button_click.wav" id="2_u656i"]
 
 [node name="Pantalla_principal" type="Node"]
@@ -41,7 +41,7 @@ alignment = 1
 
 [node name="Titulo" type="TextureRect" parent="Pantalla/AspectRatioContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_e55vy")
+texture = ExtResource("2_7gjvd")
 
 [node name="BotonInicio" type="Button" parent="Pantalla/AspectRatioContainer/VBoxContainer"]
 layout_mode = 2

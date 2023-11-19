@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c082id0ishfdx"
-path="res://.godot/imported/ph_fondo.png-b6dcb23840fbb738889416d093a2a69d.ctex"
+uid="uid://dl0dyubidp1pn"
+path="res://.godot/imported/ph_flechita2.png-40a79460d9dfbdad72d91120f77e1914.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArteVisual/ph_fondo.png"
-dest_files=["res://.godot/imported/ph_fondo.png-b6dcb23840fbb738889416d093a2a69d.ctex"]
+source_file="res://ArteVisual/UI/ph_flechita2.png"
+dest_files=["res://.godot/imported/ph_flechita2.png-40a79460d9dfbdad72d91120f77e1914.ctex"]
 
 [params]
 
