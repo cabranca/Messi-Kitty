@@ -11,17 +11,18 @@ metadata/_edit_vertical_guides_ = [576.0]
 [node name="Pantalla" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 194.0
-offset_right = 958.0
+offset_right = 764.0
 offset_bottom = 122.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
 
 [node name="ColorRect" type="ColorRect" parent="Pantalla"]
 layout_mode = 2
-offset_left = -194.0
-offset_right = 959.0
-offset_bottom = 650.0
+anchor_left = -0.254
+anchor_right = -0.254
+offset_left = 194.056
+offset_right = 2114.06
+offset_bottom = 1080.0
 color = Color(0.498039, 0.627451, 0.635294, 1)
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="Pantalla"]
@@ -29,10 +30,10 @@ layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -241.0
-offset_right = 370.0
-offset_bottom = 611.0
-scale = Vector2(0.8, 0.8)
+offset_left = 278.0
+offset_top = 200.0
+offset_right = 878.0
+offset_bottom = 811.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Pantalla/AspectRatioContainer"]
 layout_mode = 2
