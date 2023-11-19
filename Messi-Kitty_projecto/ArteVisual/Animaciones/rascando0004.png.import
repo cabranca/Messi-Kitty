@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://5ppq2j4wxo3g"
-path="res://.godot/imported/ph_CursorGoma.png-e389b083332b384c7211675fe39ea507.ctex"
+uid="uid://bph0opegij34x"
+path="res://.godot/imported/rascando0004.png-4b1222cf45510464832d134a102b6441.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://ArteVisual/ph_CursorGoma.png"
-dest_files=["res://.godot/imported/ph_CursorGoma.png-e389b083332b384c7211675fe39ea507.ctex"]
+source_file="res://ArteVisual/Animaciones/rascando0004.png"
+dest_files=["res://.godot/imported/rascando0004.png-4b1222cf45510464832d134a102b6441.ctex"]
 
 [params]
 
