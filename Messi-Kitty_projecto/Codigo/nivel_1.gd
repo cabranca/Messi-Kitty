@@ -14,8 +14,8 @@ func new_game():
 	Variables.puntaje = 0
 	Variables.contadorBasura = 0
 	Variables.menuAbierto = false
-	$Puntaje.text = puntajePrefix + str(Variables.puntaje)
-	$ContadorBasura.text = contadorBasuraPrefix + str(Variables.contadorBasura)
+	$Ui/Puntaje.text = puntajePrefix + str(Variables.puntaje)
+	$Ui/ContadorBasura.text = contadorBasuraPrefix + str(Variables.contadorBasura)
 	$BasuraTimer.start()
 	
 func _process(delta):
@@ -23,8 +23,8 @@ func _process(delta):
 		game_over()	
 	
 	update_timer()
-	$Puntaje.text = puntajePrefix + str(Variables.puntaje)
-	$ContadorBasura.text = contadorBasuraPrefix + str(Variables.contadorBasura)
+	$Ui/Puntaje.text = puntajePrefix + str(Variables.puntaje)
+	$Ui/ContadorBasura.text = contadorBasuraPrefix + str(Variables.contadorBasura)
 	
 
 func update_timer():
@@ -45,8 +45,8 @@ func _on_basura_timer_timeout():
 	#var tamanio_basura = basura.find_child("Sprite2D").texture.get_size()
 	
 	# Genero una posicion random inicial (probar get_viewport_rect())
-	var xPos = randf() * $Camera2D/Control/FondoA.size.x
-	var yPos = randf() * $Camera2D/Control/FondoA.size.y
+	var xPos = randf() * $FondoA.size.x
+	var yPos = randf() * $FondoA.size.y
 	
 	# Seteo la posicion a la nueva basura
 	basura.position = Vector2(xPos, yPos)
