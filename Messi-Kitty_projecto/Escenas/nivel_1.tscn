@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dvbbttjxg3ek7"]
+[gd_scene load_steps=12 format=3 uid="uid://dvbbttjxg3ek7"]
 
 [ext_resource type="Script" path="res://Codigo/nivel_1.gd" id="1_33hxw"]
 [ext_resource type="PackedScene" uid="uid://c6bwkdx64ojnm" path="res://Escenas/basura.tscn" id="2_rsyts"]
@@ -9,6 +9,8 @@
 [ext_resource type="Script" path="res://Codigo/Fondo.gd" id="4_lp7fj"]
 [ext_resource type="AudioStream" uid="uid://b0teva6wcqtgm" path="res://Audio/chill_music.mp3" id="4_t5bgk"]
 [ext_resource type="Texture2D" uid="uid://bc8kl8engsp1g" path="res://ArteVisual/fondo_posta_boceto.png" id="7_bl8qs"]
+[ext_resource type="Texture2D" uid="uid://juagss4q05fx" path="res://ArteVisual/ph_BarraFondo.png" id="10_x8dvl"]
+[ext_resource type="Texture2D" uid="uid://4bh5xvf5c2l4" path="res://ArteVisual/ph_BarraRelleno.png" id="11_i0av5"]
 
 [node name="Nivel1" type="Node"]
 script = ExtResource("1_33hxw")
@@ -88,6 +90,15 @@ grow_vertical = 2
 texture_normal = ExtResource("3_t3muv")
 texture_pressed = ExtResource("4_a635c")
 flip_h = true
+
+[node name="BarraBasura" type="TextureProgressBar" parent="Ui"]
+offset_left = 1300.0
+offset_top = 40.0
+offset_right = 1550.0
+offset_bottom = 100.0
+max_value = 30.0
+texture_under = ExtResource("10_x8dvl")
+texture_progress = ExtResource("11_i0av5")
 
 [node name="Camera2D" type="Camera2D" parent="Ui"]
 anchor_mode = 0

@@ -5,6 +5,7 @@ extends Node2D
 @export var posicionDe: Vector2
 var enElCentro: bool
 
+
 func _ready():
 	position = posicionCentro
 	enElCentro = true

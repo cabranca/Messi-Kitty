@@ -5,7 +5,9 @@ extends Node
 
 var puntajePrefix = "Puntaje: "
 var contadorBasuraPrefix = "Basura acumulada: "
+var barraBasura
 var contadorNuevaBasura = 0
+
 
 func _ready():
 	new_game()
@@ -17,7 +19,8 @@ func new_game():
 	$Ui/Puntaje.text = puntajePrefix + str(Variables.puntaje)
 	$Ui/ContadorBasura.text = contadorBasuraPrefix + str(Variables.contadorBasura)
 	$BasuraTimer.start()
-	
+	barraBasura = $Ui/BarraBasura
+		
 func _process(delta):
 	if Variables.contadorBasura == 30:
 		game_over()	
@@ -25,7 +28,7 @@ func _process(delta):
 	update_timer()
 	$Ui/Puntaje.text = puntajePrefix + str(Variables.puntaje)
 	$Ui/ContadorBasura.text = contadorBasuraPrefix + str(Variables.contadorBasura)
-	
+	barraBasura.value = Variables.contadorBasura
 
 func update_timer():
 	if Variables.menuAbierto and not $BasuraTimer.is_stopped():
