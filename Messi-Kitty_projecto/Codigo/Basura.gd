@@ -15,9 +15,10 @@ func _input_event(viewport, event, shape_idx):
 	if sprite2.visible:
 		if event is InputEventMouseButton:
 			if event.button_index == MOUSE_BUTTON_LEFT:
-				#$GomaBorrando.play()
+				$GomaBorrando.play()
 				Variables.contadorBasura -= 1
 				Variables.puntaje += 1
 				sprite2.visible = false
 				var sprite1 = find_child("Sprite1")
 				sprite1.visible = true
+				Variables.spawnPositionsVisited[Variables.index] = false

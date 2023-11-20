@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=3 uid="uid://dvbbttjxg3ek7"]
+[gd_scene load_steps=37 format=3 uid="uid://dvbbttjxg3ek7"]
 
 [ext_resource type="Script" path="res://Codigo/nivel_1.gd" id="1_33hxw"]
 [ext_resource type="PackedScene" uid="uid://c6bwkdx64ojnm" path="res://Escenas/basura.tscn" id="2_rsyts"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://bpbd1iqlfmrmc" path="res://ArteVisual/Props/alfombra.png" id="14_uwx5t"]
 [ext_resource type="Texture2D" uid="uid://bmv1fsnypeeqb" path="res://ArteVisual/Props/alfombra_rota.png" id="15_ag5ng"]
 [ext_resource type="Texture2D" uid="uid://bv2mgt0j5uewf" path="res://ArteVisual/Props/planta.png" id="16_0qj44"]
+[ext_resource type="AudioStream" uid="uid://67vv46pflvfg" path="res://Audio/fx/goma_borrando_2.wav" id="16_ajr25"]
 [ext_resource type="AudioStream" uid="uid://cryr6bct2a6kb" path="res://Audio/fx/rasgando.wav" id="16_y2ffd"]
 [ext_resource type="Texture2D" uid="uid://dqol4dvivrpai" path="res://ArteVisual/Props/planta_rota.png" id="17_x5w0u"]
 [ext_resource type="Texture2D" uid="uid://kyoc65nek1r1" path="res://ArteVisual/Props/portaretrato.png" id="18_bcqly"]
@@ -31,7 +32,10 @@
 [ext_resource type="AudioStream" uid="uid://bmr3aub2qa0qt" path="res://Audio/fx/caida desorden  2.wav" id="26_fpqru"]
 [ext_resource type="Texture2D" uid="uid://b308jdqfstbqq" path="res://ArteVisual/Props/cornetita_props.png" id="27_yqkf7"]
 [ext_resource type="Texture2D" uid="uid://dm5jug1l1v8ei" path="res://ArteVisual/Props/sombrero_props_transparente.png" id="28_y1qqt"]
+[ext_resource type="Texture2D" uid="uid://qt4b2kpkwfxt" path="res://ArteVisual/Props/lapicero.png" id="31_37t37"]
 [ext_resource type="AudioStream" uid="uid://fmpfqqb3i87v" path="res://Audio/fx/maullido.wav" id="32_jenid"]
+[ext_resource type="Texture2D" uid="uid://c3lc60x42a6vd" path="res://ArteVisual/Props/lapiceroroto.png" id="32_vr22e"]
+[ext_resource type="AudioStream" uid="uid://lt181vyatuuv" path="res://Audio/fx/caida madera.wav" id="33_hcvoc"]
 
 [node name="Nivel1" type="Node"]
 script = ExtResource("1_33hxw")
@@ -143,6 +147,9 @@ texture = ExtResource("15_ag5ng")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Alfombra"]
 polygon = PackedVector2Array(57, -24, 138, -8, 197, 2, 244, 14, 289, 37, 303, 65, 275, 85, 225, 108, 165, 117, 59, 126, -43, 116, -114, 89, -156, 56, -162, 32, -92, 4, 2, -18)
 
+[node name="GomaBorrando" type="AudioStreamPlayer" parent="Props/Alfombra"]
+stream = ExtResource("16_ajr25")
+
 [node name="Planta" type="StaticBody2D" parent="Props"]
 input_pickable = true
 script = ExtResource("14_byet4")
@@ -159,6 +166,9 @@ texture = ExtResource("17_x5w0u")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Planta"]
 polygon = PackedVector2Array(470, 468, 473, 451, 485, 448, 499, 446, 515, 446, 534, 445, 547, 451, 552, 456, 552, 466, 548, 488, 544, 527, 529, 533, 495, 532, 479, 525)
+
+[node name="GomaBorrando" type="AudioStreamPlayer" parent="Props/Planta"]
+stream = ExtResource("16_ajr25")
 
 [node name="Portarretratos" type="StaticBody2D" parent="Props"]
 input_pickable = true
@@ -178,9 +188,13 @@ texture = ExtResource("19_a11sk")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Portarretratos"]
 polygon = PackedVector2Array(2592, 652, 2602, 652, 2610, 671, 2633, 672, 2657, 681, 2650, 688, 2573, 688, 2561, 682, 2559, 669, 2598, 673, 2586, 653)
 
-[node name="FX" type="AudioStreamPlayer" parent="Props/Portarretratos"]
+[node name="FX" type="AudioStreamPlayer2D" parent="Props/Portarretratos"]
+position = Vector2(2605, 672)
 stream = ExtResource("20_nm3fi")
-volume_db = -11.19
+attenuation = 0.594603
+
+[node name="GomaBorrando" type="AudioStreamPlayer" parent="Props/Portarretratos"]
+stream = ExtResource("16_ajr25")
 
 [node name="Vaso" type="StaticBody2D" parent="Props"]
 input_pickable = true
@@ -200,9 +214,13 @@ texture = ExtResource("21_v3viw")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Vaso"]
 polygon = PackedVector2Array(1398, 1050, 1381, 1053, 1367, 1050, 1349, 1042, 1345, 1036, 1344, 1027, 1348, 1021, 1352, 1018, 1364, 1016, 1386, 1016, 1396, 1031, 1395, 1041)
 
-[node name="FX" type="AudioStreamPlayer" parent="Props/Vaso"]
+[node name="FX" type="AudioStreamPlayer2D" parent="Props/Vaso"]
+position = Vector2(1377, 1032)
 stream = ExtResource("20_nm3fi")
-volume_db = -11.19
+attenuation = 0.554785
+
+[node name="GomaBorrando" type="AudioStreamPlayer" parent="Props/Vaso"]
+stream = ExtResource("16_ajr25")
 
 [node name="Zapatillas" type="StaticBody2D" parent="Props"]
 input_pickable = true
@@ -221,6 +239,9 @@ texture = ExtResource("23_d3fom")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Zapatillas"]
 polygon = PackedVector2Array(-1603, 883, -1582, 885, -1564, 870, -1533, 878, -1533, 893, -1491, 895, -1480, 904, -1495, 916, -1487, 926, -1497, 944, -1509, 948, -1513, 957, -1525, 960, -1546, 964, -1556, 996, -1578, 987, -1593, 980, -1601, 962, -1609, 946, -1612, 936)
+
+[node name="GomaBorrando" type="AudioStreamPlayer" parent="Props/Zapatillas"]
+stream = ExtResource("16_ajr25")
 
 [node name="Vuvuzela" type="StaticBody2D" parent="Props"]
 input_pickable = true
@@ -241,9 +262,12 @@ texture = ExtResource("24_lq053")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Vuvuzela"]
 polygon = PackedVector2Array(2174, 834, 2205, 847, 2297, 857, 2347, 858, 2347, 871, 2298, 868, 2210, 877, 2180, 882)
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Props/Vuvuzela"]
-position = Vector2(2088, 747)
+[node name="FX" type="AudioStreamPlayer2D" parent="Props/Vuvuzela"]
+position = Vector2(2214, 860)
 stream = ExtResource("26_fpqru")
+
+[node name="GomaBorrando" type="AudioStreamPlayer" parent="Props/Vuvuzela"]
+stream = ExtResource("16_ajr25")
 
 [node name="Termo" type="StaticBody2D" parent="Props"]
 input_pickable = true
@@ -264,9 +288,13 @@ texture = ExtResource("25_fsccr")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Termo"]
 polygon = PackedVector2Array(-193, 989, -56, 960, -54, 1032, -98, 1027, -102, 1052, -147, 1042, -159, 1023, -170, 1020, -172, 1008, -192, 999)
 
-[node name="FX" type="AudioStreamPlayer" parent="Props/Termo"]
+[node name="FX" type="AudioStreamPlayer2D" parent="Props/Termo"]
+position = Vector2(-138, 999)
 stream = ExtResource("20_nm3fi")
-volume_db = -11.19
+attenuation = 0.517632
+
+[node name="GomaBorrando" type="AudioStreamPlayer" parent="Props/Termo"]
+stream = ExtResource("16_ajr25")
 
 [node name="Mate" type="StaticBody2D" parent="Props"]
 input_pickable = true
@@ -287,9 +315,13 @@ texture = ExtResource("26_bk25f")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Mate"]
 polygon = PackedVector2Array(-506, 669, -512, 657, -504, 627, -492, 628, -475, 641, -465, 662)
 
-[node name="FX" type="AudioStreamPlayer" parent="Props/Mate"]
+[node name="FX" type="AudioStreamPlayer2D" parent="Props/Mate"]
+position = Vector2(-494, 648)
 stream = ExtResource("20_nm3fi")
-volume_db = -11.19
+attenuation = 0.450625
+
+[node name="GomaBorrando" type="AudioStreamPlayer" parent="Props/Mate"]
+stream = ExtResource("16_ajr25")
 
 [node name="Corneta" type="StaticBody2D" parent="Props"]
 input_pickable = true
@@ -308,9 +340,13 @@ texture = ExtResource("27_yqkf7")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Corneta"]
 polygon = PackedVector2Array(2372, 191, 2442, 275, 2453, 269, 2398, 169)
 
-[node name="FX" type="AudioStreamPlayer" parent="Props/Corneta"]
+[node name="FX" type="AudioStreamPlayer2D" parent="Props/Corneta"]
+position = Vector2(2414, 224)
 stream = ExtResource("20_nm3fi")
-volume_db = -11.19
+attenuation = 0.466516
+
+[node name="GomaBorrando" type="AudioStreamPlayer" parent="Props/Corneta"]
+stream = ExtResource("16_ajr25")
 
 [node name="Planta2" type="StaticBody2D" parent="Props"]
 input_pickable = true
@@ -329,6 +365,9 @@ texture = ExtResource("17_x5w0u")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Planta2"]
 polygon = PackedVector2Array(2575, 267, 2586, 276, 2614, 278, 2631, 276, 2639, 269, 2646, 211, 2644, 201, 2625, 192, 2612, 192, 2594, 193, 2576, 197, 2568, 203, 2565, 212, 2568, 219, 2570, 223, 2571, 228)
+
+[node name="GomaBorrando" type="AudioStreamPlayer" parent="Props/Planta2"]
+stream = ExtResource("16_ajr25")
 
 [node name="Piluso" type="StaticBody2D" parent="Props"]
 input_pickable = true
@@ -349,8 +388,38 @@ texture = ExtResource("28_y1qqt")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Piluso"]
 polygon = PackedVector2Array(742, 975, 751, 969, 775, 965, 797, 966, 819, 971, 823, 978, 811, 988, 806, 997, 805, 1028, 782, 1030, 760, 1028, 757, 1025, 758, 998)
 
+[node name="GomaBorrando" type="AudioStreamPlayer" parent="Props/Piluso"]
+stream = ExtResource("16_ajr25")
+
+[node name="Lapicero" type="StaticBody2D" parent="Props"]
+input_pickable = true
+script = ExtResource("14_byet4")
+
+[node name="Sprite1" type="Sprite2D" parent="Props/Lapicero"]
+position = Vector2(233, 667)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("31_37t37")
+
+[node name="Sprite2" type="Sprite2D" parent="Props/Lapicero"]
+visible = false
+position = Vector2(393, 1000)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("32_vr22e")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Lapicero"]
+polygon = PackedVector2Array(335, 974, 344, 996, 336, 1015, 317, 1036, 319, 1059, 358, 1062, 397, 1061, 438, 1058, 455, 1038, 468, 1014, 462, 986, 441, 966, 414, 964, 390, 959, 360, 952, 334, 970)
+
+[node name="FX" type="AudioStreamPlayer2D" parent="Props/Lapicero"]
+position = Vector2(391, 1007)
+stream = ExtResource("33_hcvoc")
+attenuation = 0.482968
+
+[node name="GomaBorrando" type="AudioStreamPlayer" parent="Props/Lapicero"]
+stream = ExtResource("16_ajr25")
+
 [node name="Maullido" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("32_jenid")
+volume_db = -6.265
 max_distance = 5000.0
 attenuation = 0.486136
 

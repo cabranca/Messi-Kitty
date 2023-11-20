@@ -7,7 +7,7 @@ extends Node
 var puntajePrefix = "Puntaje: "
 var contadorBasuraPrefix = "Basura acumulada: "
 var barraBasura
-var contadorNuevaBasura = 0
+var contadorApariciones = 0
 var messiOnScene = false
 var spawnPositions = [
 	{"pos": Vector2(-627, 612), "animacion": "tirando", "nodo": "Mate" }, # Mate
@@ -24,18 +24,11 @@ var spawnPositions = [
 	{"pos": Vector2(2872, 934), "animacion": "lamiendo", "nodo": "Alfombra"}, # Alfombra
 	{"pos": Vector2(-687, 951), "animacion": "maullido", "nodo": "Nada"}, # Maullido 1
 	{"pos": Vector2(225, 654), "animacion": "maullido", "nodo": "Nada"}, # Maullido 2
-	{"pos": Vector2(3038, 549), "animacion": "maullido", "nodo": "Nada"} # Maullido 3
+	{"pos": Vector2(3038, 549), "animacion": "maullido", "nodo": "Nada"}, # Maullido 3
+	{"pos": Vector2(138, 656), "animacion": "tirando", "nodo": "Lapicero"}
 ]
 
 var condicionDerrota = 12
-
-var spawnPositionsVisited = [
-	false, false, false, false, false, 
-	false, false, false, false, false, 
-	false, false, false, false, false
-	]
-	
-var index = 0
 
 
 func _ready():
@@ -84,27 +77,30 @@ func game_over():
 
 # Cuando el timer llega a cero spawneo a Messi en una posicion de las posibles
 func _on_basura_timer_timeout():
-	print("Messi spawn")
 	# Creo una instancia de Messi
 	var messi = messi_escena.instantiate()
 	
 	# Seteo la posicion incial donde sea que este el indice de spawn
 	var availableIndexFound = false
 	while(!availableIndexFound):
-		index = int(round(randf() * 15))
-		if index == 15:
-			index = 14
-		if !spawnPositionsVisited[index]:
+		Variables.index = int(round(randf() * 16))
+		if Variables.index == 16:
+			Variables.index = 15
+		if !Variables.spawnPositionsVisited[Variables.index]:
 			availableIndexFound = true
 			
-	messi.position = spawnPositions[index]["pos"]
+	messi.position = spawnPositions[Variables.index]["pos"]
 	var animation = messi.find_child("AnimatedSprite2D")
 	# Falta la posibilidad de otra animacion
-	animation.play(spawnPositions[index]["animacion"])
-	$Maullido.position = messi.position
-	$Maullido.play()
-	print("Messi maulla")
-	if spawnPositions[index]["nodo"] == "Juguete" or spawnPositions[index]["nodo"] == "Alfombra":
+	animation.play(spawnPositions[Variables.index]["animacion"])
+	
+	# Cada 3 apariciones que creo hago que una tenga sonido
+	if contadorApariciones % 3 == 0:
+		$Maullido.position = messi.position
+		$Maullido.play()
+	contadorApariciones += 1
+		
+	if spawnPositions[Variables.index]["nodo"] == "Juguete" or spawnPositions[Variables.index]["nodo"] == "Alfombra":
 		$Rascar.play()
 	messiOnScene = true
 	
@@ -117,7 +113,7 @@ func _on_basura_timer_timeout():
 # Cuando Messi haya terminado la animacion se llama esta funcion para borrarlo y agregar basura
 func init_basura():
 	# Encuentro el prop
-	var nombreNodo = spawnPositions[index]["nodo"]
+	var nombreNodo = spawnPositions[Variables.index]["nodo"]
 	if nombreNodo != "Nada" and nombreNodo != "Juguete":
 		var prop = get_node("Props/" + nombreNodo)
 		prop.find_child("Sprite1").visible = false
@@ -128,11 +124,6 @@ func init_basura():
 		var fx = prop.find_child("FX")
 		if fx != null:
 			fx.play()
-		
-		# Cada 3 basuras que creo hago que una tenga sonido
-		#if contadorNuevaBasura % 3 == 0:
-			#$CaidaObjeto.play()
-		#contadorNuevaBasura += 1
 	
 	# Encuentro a Messi
 	var messi = get_node("Messi")
@@ -140,7 +131,6 @@ func init_basura():
 	#Elimino a Messi
 	remove_child(messi)
 	$Rascar.stop()
-	#$FXRascar.stop()
 	messiOnScene = false
 	
 	
