@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bk2b1iq7pot2m"]
+[gd_scene load_steps=11 format=3 uid="uid://bk2b1iq7pot2m"]
 
-[ext_resource type="Script" path="res://MenuGameOver.gd" id="1_72ocb"]
+[ext_resource type="Script" path="res://Codigo/MenuGameOver.gd" id="1_72ocb"]
+[ext_resource type="Theme" uid="uid://cgt7wikjou02k" path="res://ArteVisual/TemasGodot/TemaletraGrande.tres" id="2_adktu"]
+[ext_resource type="Texture2D" uid="uid://d3n1vcog7xiyu" path="res://ArteVisual/UI/PantallagameOver/boton reiniciar.png" id="3_1ekyl"]
+[ext_resource type="Texture2D" uid="uid://b16hqltto1ybo" path="res://ArteVisual/UI/PantallagameOver/pantallagameover.jpg" id="3_sgby5"]
+[ext_resource type="Texture2D" uid="uid://co5xvknqq2rmb" path="res://ArteVisual/UI/PantallagameOver/boton reiniciar apretado.png" id="4_3jlsv"]
+[ext_resource type="Texture2D" uid="uid://cx6tenpdcuxfg" path="res://ArteVisual/UI/PantallagameOver/puntuacion.png" id="4_h0pdv"]
+[ext_resource type="Texture2D" uid="uid://dedcixe8tn4mw" path="res://ArteVisual/UI/PantallaPrincipal/boton salir.png" id="5_p1b51"]
+[ext_resource type="Texture2D" uid="uid://b4b21gckwifho" path="res://ArteVisual/UI/PantallaPrincipal/boton salir apretado.png" id="6_5umvi"]
+[ext_resource type="AudioStream" uid="uid://dr0qfm5mkw4qj" path="res://Audio/gameover melodia.wav" id="9_bingy"]
+[ext_resource type="Texture2D" uid="uid://cqoh0o2g8qxyw" path="res://ArteVisual/UI/PantallagameOver/sentado0014.png" id="10_8pisp"]
 
 [node name="MenuGameOver" type="Node"]
 script = ExtResource("1_72ocb")
@@ -13,40 +22,72 @@ offset_right = 958.0
 offset_bottom = 122.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
+theme = ExtResource("2_adktu")
 
-[node name="ColorRect" type="ColorRect" parent="Pantalla"]
+[node name="Fondo" type="TextureRect" parent="Pantalla"]
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 2
 offset_left = -194.0
 offset_right = 1726.0
 offset_bottom = 1080.0
-color = Color(0.498039, 0.627451, 0.635294, 1)
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("3_sgby5")
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="Pantalla"]
 layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -382.0
-offset_right = 1152.0
-offset_bottom = 896.0
+offset_left = -193.0
+offset_right = 1730.0
+offset_bottom = 1077.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Pantalla/AspectRatioContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Titulo" type="Label" parent="Pantalla/AspectRatioContainer/VBoxContainer"]
+[node name="HBoxContainer2" type="HBoxContainer" parent="Pantalla/AspectRatioContainer/VBoxContainer"]
 layout_mode = 2
-text = "PERDISTE :)"
+size_flags_horizontal = 4
+
+[node name="Puntuación" type="TextureRect" parent="Pantalla/AspectRatioContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+texture = ExtResource("4_h0pdv")
+
+[node name="Numero" type="Label" parent="Pantalla/AspectRatioContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme = ExtResource("2_adktu")
+text = "Nº"
 horizontal_alignment = 1
 
-[node name="BotonReiniciar" type="Button" parent="Pantalla/AspectRatioContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Pantalla/AspectRatioContainer/VBoxContainer"]
 layout_mode = 2
-text = "Volver a jugar"
+size_flags_horizontal = 4
 
-[node name="BotonSalir" type="Button" parent="Pantalla/AspectRatioContainer/VBoxContainer"]
+[node name="BotonReiniciar" type="TextureButton" parent="Pantalla/AspectRatioContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Salir"
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_1ekyl")
+texture_hover = ExtResource("4_3jlsv")
 
-[connection signal="button_up" from="Pantalla/AspectRatioContainer/VBoxContainer/BotonReiniciar" to="." method="_on_boton_reiniciar_button_up"]
-[connection signal="button_up" from="Pantalla/AspectRatioContainer/VBoxContainer/BotonSalir" to="." method="_on_boton_salir_button_up"]
+[node name="BotonSalir" type="TextureButton" parent="Pantalla/AspectRatioContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+texture_normal = ExtResource("5_p1b51")
+texture_hover = ExtResource("6_5umvi")
+
+[node name="Gatito" type="TextureRect" parent="Pantalla"]
+layout_mode = 0
+offset_left = 1019.0
+offset_top = 381.0
+offset_right = 1719.0
+offset_bottom = 1081.0
+texture = ExtResource("10_8pisp")
+
+[node name="Melodia" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_bingy")
+
+[connection signal="button_up" from="Pantalla/AspectRatioContainer/VBoxContainer/HBoxContainer/BotonReiniciar" to="." method="_on_boton_reiniciar_button_up"]
+[connection signal="button_up" from="Pantalla/AspectRatioContainer/VBoxContainer/HBoxContainer/BotonSalir" to="." method="_on_boton_salir_button_up"]

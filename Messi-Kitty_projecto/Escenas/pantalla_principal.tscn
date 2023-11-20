@@ -1,8 +1,53 @@
-[gd_scene load_steps=4 format=3 uid="uid://dgu5nmwfd1g87"]
+[gd_scene load_steps=18 format=3 uid="uid://dgu5nmwfd1g87"]
 
 [ext_resource type="Script" path="res://Codigo/autoload.gd" id="1_35ret"]
-[ext_resource type="Texture2D" uid="uid://co51j80dqenqd" path="res://ArteVisual/UI/ph_logo.png" id="2_7gjvd"]
+[ext_resource type="Theme" uid="uid://ddoqlysjpkcmb" path="res://ArteVisual/TemasGodot/TemaletraChica.tres" id="2_eeopn"]
 [ext_resource type="AudioStream" uid="uid://4sootctac88x" path="res://Audio/play_button_click.wav" id="2_u656i"]
+[ext_resource type="Texture2D" uid="uid://c38b32isd0fj7" path="res://ArteVisual/UI/PantallaPrincipal/Pantalla inicio_0_color_fondo.png" id="3_hmdk2"]
+[ext_resource type="Texture2D" uid="uid://bs4xjlwnpcnst" path="res://ArteVisual/UI/PantallaPrincipal/boton play.png" id="4_uwjub"]
+[ext_resource type="Texture2D" uid="uid://dpdcquem1gidy" path="res://ArteVisual/UI/PantallaPrincipal/boton play apretado.png" id="5_damc7"]
+[ext_resource type="Texture2D" uid="uid://dedcixe8tn4mw" path="res://ArteVisual/UI/PantallaPrincipal/boton salir.png" id="6_h7pq0"]
+[ext_resource type="Texture2D" uid="uid://b4b21gckwifho" path="res://ArteVisual/UI/PantallaPrincipal/boton salir apretado.png" id="7_2n3dw"]
+[ext_resource type="Script" path="res://Codigo/ColitaGato.gd" id="7_3ms31"]
+[ext_resource type="Texture2D" uid="uid://q4qv8p5iup3l" path="res://ArteVisual/UI/PantallaPrincipal/Pantalla inicio_0_color_cola 1.png" id="8_x7efg"]
+[ext_resource type="Texture2D" uid="uid://15oxc0t5ry57" path="res://ArteVisual/UI/PantallaPrincipal/Pantalla inicio_0_color_cola 2.png" id="9_hsk3b"]
+[ext_resource type="Texture2D" uid="uid://dh3hadqjuy7bh" path="res://ArteVisual/UI/PantallaPrincipal/Pantalla inicio_0_color_cola 3.png" id="10_r1pvj"]
+[ext_resource type="Texture2D" uid="uid://bkqy6i5e7b86" path="res://ArteVisual/UI/PantallaPrincipal/Pantalla inicio_0_color_cola 4.png" id="11_7lsbc"]
+[ext_resource type="Texture2D" uid="uid://tkpqyokvutyc" path="res://ArteVisual/UI/PantallaPrincipal/Pantalla inicio_0_color_cola 5.png" id="12_3kiot"]
+[ext_resource type="AudioStream" uid="uid://crtxfqde4g4h8" path="res://Audio/Messi_Kitty_menu_song.wav" id="14_ryu67"]
+[ext_resource type="Script" path="res://Codigo/MusicaMenu.gd" id="14_tvp7s"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8f6ci"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_x7efg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hsk3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_r1pvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7lsbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_3kiot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7lsbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_r1pvj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hsk3b")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Pantalla_principal" type="Node"]
 script = ExtResource("1_35ret")
@@ -13,46 +58,65 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 764.0
 offset_bottom = 122.0
-size_flags_horizontal = 4
 size_flags_vertical = 0
+theme = ExtResource("2_eeopn")
 
-[node name="ColorRect" type="ColorRect" parent="Pantalla"]
+[node name="ColorRect" type="TextureRect" parent="Pantalla"]
 layout_mode = 2
 anchor_left = -0.254
 anchor_right = -0.254
 offset_left = 194.056
 offset_right = 2114.06
 offset_bottom = 1080.0
-color = Color(0.498039, 0.627451, 0.635294, 1)
+texture = ExtResource("3_hmdk2")
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="Pantalla"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 278.0
-offset_top = 200.0
-offset_right = 878.0
-offset_bottom = 811.0
+offset_left = -380.0
+offset_top = 539.0
+offset_right = 1536.0
+offset_bottom = 897.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Pantalla/AspectRatioContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Titulo" type="TextureRect" parent="Pantalla/AspectRatioContainer/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Pantalla/AspectRatioContainer/VBoxContainer"]
 layout_mode = 2
-texture = ExtResource("2_7gjvd")
 
-[node name="BotonInicio" type="Button" parent="Pantalla/AspectRatioContainer/VBoxContainer"]
+[node name="BotonInicio" type="TextureButton" parent="Pantalla/AspectRatioContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
-text = "Comenzar"
+size_flags_horizontal = 0
+texture_normal = ExtResource("4_uwjub")
+texture_hover = ExtResource("5_damc7")
+
+[node name="BotonSalir" type="TextureButton" parent="Pantalla/AspectRatioContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("6_h7pq0")
+texture_hover = ExtResource("7_2n3dw")
 
 [node name="BotonCreditos" type="Button" parent="Pantalla/AspectRatioContainer/VBoxContainer"]
 layout_mode = 2
 text = "Créditos"
 
+[node name="ColitaGato" type="AnimatedSprite2D" parent="."]
+position = Vector2(421, 941)
+sprite_frames = SubResource("SpriteFrames_8f6ci")
+frame = 7
+frame_progress = 1.0
+script = ExtResource("7_3ms31")
+
+[node name="MusicaMenu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_ryu67")
+script = ExtResource("14_tvp7s")
+
 [node name="PlayButtonClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_u656i")
 
-[connection signal="button_down" from="Pantalla/AspectRatioContainer/VBoxContainer/BotonInicio" to="." method="_on_boton_inicio_button_down"]
+[connection signal="button_down" from="Pantalla/AspectRatioContainer/VBoxContainer/HBoxContainer/BotonInicio" to="." method="_on_boton_inicio_button_down"]
+[connection signal="button_down" from="Pantalla/AspectRatioContainer/VBoxContainer/HBoxContainer/BotonSalir" to="." method="_on_boton_salir_button_down"]
 [connection signal="button_down" from="Pantalla/AspectRatioContainer/VBoxContainer/BotonCreditos" to="." method="_on_boton_creditos_button_down"]
