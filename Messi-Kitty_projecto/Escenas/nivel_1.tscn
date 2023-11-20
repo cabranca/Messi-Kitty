@@ -1,18 +1,34 @@
-[gd_scene load_steps=14 format=3 uid="uid://dvbbttjxg3ek7"]
+[gd_scene load_steps=30 format=3 uid="uid://dvbbttjxg3ek7"]
 
 [ext_resource type="Script" path="res://Codigo/nivel_1.gd" id="1_33hxw"]
 [ext_resource type="PackedScene" uid="uid://c6bwkdx64ojnm" path="res://Escenas/basura.tscn" id="2_rsyts"]
 [ext_resource type="AudioStream" uid="uid://dvcha2fkhgc1a" path="res://Audio/golpe_al_caer.mp3" id="3_6jt1v"]
 [ext_resource type="PackedScene" uid="uid://b4ik250edspbw" path="res://Escenas/menu_pausa.tscn" id="3_t8oy6"]
 [ext_resource type="Script" path="res://Codigo/Fondo.gd" id="4_lp7fj"]
-[ext_resource type="AudioStream" uid="uid://b0teva6wcqtgm" path="res://Audio/chill_music.mp3" id="4_t5bgk"]
 [ext_resource type="Texture2D" uid="uid://brcjygp4r5eyr" path="res://ArteVisual/Escenario final completo.png" id="5_mgret"]
+[ext_resource type="AudioStream" uid="uid://bngqb4b4yw25t" path="res://Audio/Messi Kitty, Gameplay Song.wav" id="7_356pt"]
 [ext_resource type="Theme" uid="uid://ddoqlysjpkcmb" path="res://ArteVisual/TemasGodot/TemaletraChica.tres" id="9_xcos8"]
 [ext_resource type="Texture2D" uid="uid://cv5mlolnnfywj" path="res://ArteVisual/UI/Flechas.png" id="10_8jfhf"]
 [ext_resource type="PackedScene" uid="uid://bixtxdklmw80y" path="res://Escenas/messi.tscn" id="10_r3kik"]
 [ext_resource type="Texture2D" uid="uid://b1l7nu45m4kch" path="res://ArteVisual/UI/FlechasB.png" id="11_lvh0a"]
 [ext_resource type="Texture2D" uid="uid://s4qhe2vhg603" path="res://ArteVisual/UI/BarraOrden.png" id="12_lsyay"]
 [ext_resource type="Texture2D" uid="uid://buvpfxjdsu7kh" path="res://ArteVisual/UI/BarraDesOrden.png" id="13_mne26"]
+[ext_resource type="Script" path="res://Codigo/Basura.gd" id="14_byet4"]
+[ext_resource type="Texture2D" uid="uid://bpbd1iqlfmrmc" path="res://ArteVisual/Props/alfombra.png" id="14_uwx5t"]
+[ext_resource type="Texture2D" uid="uid://bmv1fsnypeeqb" path="res://ArteVisual/Props/alfombra_rota.png" id="15_ag5ng"]
+[ext_resource type="Texture2D" uid="uid://bv2mgt0j5uewf" path="res://ArteVisual/Props/planta.png" id="16_0qj44"]
+[ext_resource type="Texture2D" uid="uid://dqol4dvivrpai" path="res://ArteVisual/Props/planta_rota.png" id="17_x5w0u"]
+[ext_resource type="Texture2D" uid="uid://kyoc65nek1r1" path="res://ArteVisual/Props/portaretrato.png" id="18_bcqly"]
+[ext_resource type="Texture2D" uid="uid://c4dm655cnoll5" path="res://ArteVisual/Props/portaretrato_caiduchis.png" id="19_a11sk"]
+[ext_resource type="Texture2D" uid="uid://bsa47e1kv4nre" path="res://ArteVisual/Props/vaso liquido.png" id="20_xe4q0"]
+[ext_resource type="Texture2D" uid="uid://cfnd8417m38jn" path="res://ArteVisual/Props/vaso liquido_caido.png" id="21_v3viw"]
+[ext_resource type="Texture2D" uid="uid://df7bp078ljqej" path="res://ArteVisual/Props/zapatillas.png" id="22_i7v3a"]
+[ext_resource type="Texture2D" uid="uid://b1tiyy3wcd05k" path="res://ArteVisual/Props/zapatillasdesordenadas.png" id="23_d3fom"]
+[ext_resource type="Texture2D" uid="uid://djka6en17wlr7" path="res://ArteVisual/Props/vuvuzela_props.png" id="24_lq053"]
+[ext_resource type="Texture2D" uid="uid://1oc1ifpx4658" path="res://ArteVisual/Props/termo.png" id="25_fsccr"]
+[ext_resource type="Texture2D" uid="uid://bbu3klf66wl6a" path="res://ArteVisual/Props/mate_bombilla.png" id="26_bk25f"]
+[ext_resource type="Texture2D" uid="uid://b308jdqfstbqq" path="res://ArteVisual/Props/cornetita_props.png" id="27_yqkf7"]
+[ext_resource type="Texture2D" uid="uid://dm5jug1l1v8ei" path="res://ArteVisual/Props/sombrero_props_transparente.png" id="28_y1qqt"]
 
 [node name="Nivel1" type="Node"]
 script = ExtResource("1_33hxw")
@@ -34,9 +50,8 @@ texture = ExtResource("5_mgret")
 stream = ExtResource("3_6jt1v")
 volume_db = -11.19
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_t5bgk")
-volume_db = -13.2
+[node name="MainTrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_356pt")
 autoplay = true
 
 [node name="Ui" type="Node2D" parent="."]
@@ -107,6 +122,209 @@ texture_progress = ExtResource("13_mne26")
 
 [node name="Camera2D" type="Camera2D" parent="Ui"]
 anchor_mode = 0
+
+[node name="Props" type="Node" parent="."]
+
+[node name="Alfombra" type="StaticBody2D" parent="Props"]
+position = Vector2(2827, 931)
+input_pickable = true
+script = ExtResource("14_byet4")
+
+[node name="Sprite1" type="Sprite2D" parent="Props/Alfombra"]
+position = Vector2(72, 8)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("14_uwx5t")
+
+[node name="Sprite2" type="Sprite2D" parent="Props/Alfombra"]
+visible = false
+position = Vector2(74, 45)
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("15_ag5ng")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Alfombra"]
+polygon = PackedVector2Array(57, -24, 138, -8, 197, 2, 244, 14, 289, 37, 303, 65, 275, 85, 225, 108, 165, 117, 59, 126, -43, 116, -114, 89, -156, 56, -162, 32, -92, 4, 2, -18)
+
+[node name="Planta" type="StaticBody2D" parent="Props"]
+input_pickable = true
+script = ExtResource("14_byet4")
+
+[node name="Sprite1" type="Sprite2D" parent="Props/Planta"]
+position = Vector2(515, 457)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("16_0qj44")
+
+[node name="Sprite2" type="Sprite2D" parent="Props/Planta"]
+position = Vector2(515, 457)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("17_x5w0u")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Planta"]
+polygon = PackedVector2Array(470, 468, 473, 451, 485, 448, 499, 446, 515, 446, 534, 445, 547, 451, 552, 456, 552, 466, 548, 488, 544, 527, 529, 533, 495, 532, 479, 525)
+
+[node name="Portarretratos" type="StaticBody2D" parent="Props"]
+input_pickable = true
+script = ExtResource("14_byet4")
+
+[node name="Sprite1" type="Sprite2D" parent="Props/Portarretratos"]
+position = Vector2(2581, 629)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("18_bcqly")
+
+[node name="Sprite2" type="Sprite2D" parent="Props/Portarretratos"]
+visible = false
+position = Vector2(2604, 690)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("19_a11sk")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Portarretratos"]
+polygon = PackedVector2Array(2592, 652, 2602, 652, 2610, 671, 2633, 672, 2657, 681, 2650, 688, 2573, 688, 2561, 682, 2559, 669, 2598, 673, 2586, 653)
+
+[node name="Vaso" type="StaticBody2D" parent="Props"]
+input_pickable = true
+script = ExtResource("14_byet4")
+
+[node name="Sprite1" type="Sprite2D" parent="Props/Vaso"]
+position = Vector2(1299, 818)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("20_xe4q0")
+
+[node name="Sprite2" type="Sprite2D" parent="Props/Vaso"]
+visible = false
+position = Vector2(1370, 1031)
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("21_v3viw")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Vaso"]
+polygon = PackedVector2Array(1398, 1050, 1381, 1053, 1367, 1050, 1349, 1042, 1345, 1036, 1344, 1027, 1348, 1021, 1352, 1018, 1364, 1016, 1386, 1016, 1396, 1031, 1395, 1041)
+
+[node name="Zapatillas" type="StaticBody2D" parent="Props"]
+input_pickable = true
+script = ExtResource("14_byet4")
+
+[node name="Sprite1" type="Sprite2D" parent="Props/Zapatillas"]
+position = Vector2(-1548, 922)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("22_i7v3a")
+
+[node name="Sprite2" type="Sprite2D" parent="Props/Zapatillas"]
+visible = false
+position = Vector2(-1548, 926)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("23_d3fom")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Zapatillas"]
+polygon = PackedVector2Array(-1603, 883, -1582, 885, -1564, 870, -1533, 878, -1533, 893, -1491, 895, -1480, 904, -1495, 916, -1487, 926, -1497, 944, -1509, 948, -1513, 957, -1525, 960, -1546, 964, -1556, 996, -1578, 987, -1593, 980, -1601, 962, -1609, 946, -1612, 936)
+
+[node name="Vuvuzela" type="StaticBody2D" parent="Props"]
+input_pickable = true
+script = ExtResource("14_byet4")
+
+[node name="Sprite1" type="Sprite2D" parent="Props/Vuvuzela"]
+position = Vector2(2088, 747)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("24_lq053")
+
+[node name="Sprite2" type="Sprite2D" parent="Props/Vuvuzela"]
+visible = false
+position = Vector2(2261, 858)
+rotation = 1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("24_lq053")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Vuvuzela"]
+polygon = PackedVector2Array(2174, 834, 2205, 847, 2297, 857, 2347, 858, 2347, 871, 2298, 868, 2210, 877, 2180, 882)
+
+[node name="Termo" type="StaticBody2D" parent="Props"]
+input_pickable = true
+script = ExtResource("14_byet4")
+
+[node name="Sprite1" type="Sprite2D" parent="Props/Termo"]
+position = Vector2(-145, 679)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("25_fsccr")
+
+[node name="Sprite2" type="Sprite2D" parent="Props/Termo"]
+visible = false
+position = Vector2(-123, 1005)
+rotation = -1.5708
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("25_fsccr")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Termo"]
+polygon = PackedVector2Array(-193, 989, -56, 960, -54, 1032, -98, 1027, -102, 1052, -147, 1042, -159, 1023, -170, 1020, -172, 1008, -192, 999)
+
+[node name="Mate" type="StaticBody2D" parent="Props"]
+input_pickable = true
+script = ExtResource("14_byet4")
+
+[node name="Sprite1" type="Sprite2D" parent="Props/Mate"]
+position = Vector2(-548, 628)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("26_bk25f")
+
+[node name="Sprite2" type="Sprite2D" parent="Props/Mate"]
+visible = false
+position = Vector2(-485, 650)
+rotation = 1.74533
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("26_bk25f")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Mate"]
+polygon = PackedVector2Array(-506, 669, -512, 657, -504, 627, -492, 628, -475, 641, -465, 662)
+
+[node name="Corneta" type="StaticBody2D" parent="Props"]
+input_pickable = true
+script = ExtResource("14_byet4")
+
+[node name="Sprite1" type="Sprite2D" parent="Props/Corneta"]
+position = Vector2(2162, 167)
+texture = ExtResource("27_yqkf7")
+
+[node name="Sprite2" type="Sprite2D" parent="Props/Corneta"]
+visible = false
+position = Vector2(2417, 226)
+rotation = 2.52384
+texture = ExtResource("27_yqkf7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Corneta"]
+polygon = PackedVector2Array(2372, 191, 2442, 275, 2453, 269, 2398, 169)
+
+[node name="Planta2" type="StaticBody2D" parent="Props"]
+input_pickable = true
+script = ExtResource("14_byet4")
+
+[node name="Sprite1" type="Sprite2D" parent="Props/Planta2"]
+position = Vector2(2610, 204)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("16_0qj44")
+
+[node name="Sprite2" type="Sprite2D" parent="Props/Planta2"]
+visible = false
+position = Vector2(2610, 204)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("17_x5w0u")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Planta2"]
+polygon = PackedVector2Array(2575, 267, 2586, 276, 2614, 278, 2631, 276, 2639, 269, 2646, 211, 2644, 201, 2625, 192, 2612, 192, 2594, 193, 2576, 197, 2568, 203, 2565, 212, 2568, 219, 2570, 223, 2571, 228)
+
+[node name="Piluso" type="StaticBody2D" parent="Props"]
+input_pickable = true
+script = ExtResource("14_byet4")
+
+[node name="Sprite1" type="Sprite2D" parent="Props/Piluso"]
+position = Vector2(1384, 527)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("28_y1qqt")
+
+[node name="Sprite2" type="Sprite2D" parent="Props/Piluso"]
+visible = false
+position = Vector2(783, 1000)
+rotation = 3.14159
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("28_y1qqt")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Piluso"]
+polygon = PackedVector2Array(742, 975, 751, 969, 775, 965, 797, 966, 819, 971, 823, 978, 811, 988, 806, 997, 805, 1028, 782, 1030, 760, 1028, 757, 1025, 758, 998)
 
 [connection signal="timeout" from="BasuraTimer" to="." method="_on_basura_timer_timeout"]
 [connection signal="button_down" from="Ui/FlechaIz" to="Ui" method="_on_flecha_iz_button_down"]

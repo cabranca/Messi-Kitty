@@ -1,90 +1,157 @@
-[gd_scene load_steps=22 format=3 uid="uid://bixtxdklmw80y"]
+[gd_scene load_steps=35 format=3 uid="uid://bixtxdklmw80y"]
 
 [ext_resource type="Script" path="res://Codigo/messi.gd" id="1_44erm"]
-[ext_resource type="Texture2D" uid="uid://cs33kb80yngwm" path="res://ArteVisual/Animaciones/tirar0000.png" id="1_kfuf6"]
-[ext_resource type="Texture2D" uid="uid://cj17lwbud126a" path="res://ArteVisual/Animaciones/tirar0001.png" id="2_5uuuc"]
-[ext_resource type="Texture2D" uid="uid://dqjk175ijackw" path="res://ArteVisual/Animaciones/rascando0000.png" id="2_lwir4"]
-[ext_resource type="Texture2D" uid="uid://j5e3tl4lqaee" path="res://ArteVisual/Animaciones/rascando0001.png" id="3_gcarn"]
-[ext_resource type="Texture2D" uid="uid://cjjf25p0ql2xt" path="res://ArteVisual/Animaciones/tirar0002.png" id="3_s1x1m"]
-[ext_resource type="Texture2D" uid="uid://dn8hlxhcagjge" path="res://ArteVisual/Animaciones/tirar0003.png" id="4_c0be3"]
-[ext_resource type="Texture2D" uid="uid://ba452jvnnxvbg" path="res://ArteVisual/Animaciones/rascando0002.png" id="4_ysdac"]
-[ext_resource type="Texture2D" uid="uid://c51ls7i2jvyl7" path="res://ArteVisual/Animaciones/tirar0004.png" id="5_u7mge"]
-[ext_resource type="Texture2D" uid="uid://bg4q88wkpar0m" path="res://ArteVisual/Animaciones/rascando0003.png" id="5_v3116"]
-[ext_resource type="Texture2D" uid="uid://bph0opegij34x" path="res://ArteVisual/Animaciones/rascando0004.png" id="6_fm727"]
-[ext_resource type="Texture2D" uid="uid://cqcd0p66ts4h4" path="res://ArteVisual/Animaciones/tirar0005.png" id="6_gjg5m"]
-[ext_resource type="Texture2D" uid="uid://cphbd0qtfnqdn" path="res://ArteVisual/Animaciones/rascando0005.png" id="7_0i2fu"]
-[ext_resource type="Texture2D" uid="uid://bp6riq5yxyegi" path="res://ArteVisual/Animaciones/tirar0006.png" id="7_rrxsr"]
-[ext_resource type="Texture2D" uid="uid://d2noe82oyoehf" path="res://ArteVisual/Animaciones/rascando0006.png" id="8_vd23c"]
-[ext_resource type="Texture2D" uid="uid://c4vbknyhnfrfv" path="res://ArteVisual/Animaciones/tirar0007.png" id="8_xi73m"]
-[ext_resource type="Texture2D" uid="uid://d3bsthn3qq3hr" path="res://ArteVisual/Animaciones/rascando0007.png" id="9_l50a6"]
-[ext_resource type="Texture2D" uid="uid://cnxbet3ycffe3" path="res://ArteVisual/Animaciones/rascando0008.png" id="10_6l3nu"]
-[ext_resource type="Texture2D" uid="uid://lhjq822ptcvg" path="res://ArteVisual/Animaciones/rascando0009.png" id="11_r2xn2"]
-[ext_resource type="Texture2D" uid="uid://bp0bdb4wopi4l" path="res://ArteVisual/Animaciones/rascando0010.png" id="12_e40h0"]
+[ext_resource type="Texture2D" uid="uid://b0icccmf6jycb" path="res://ArteVisual/Animaciones/Lamiendo/gato lamiendose0000.png" id="2_8kb4i"]
+[ext_resource type="Texture2D" uid="uid://dqjk175ijackw" path="res://ArteVisual/Animaciones/Rascando/rascando0000.png" id="2_ba2qx"]
+[ext_resource type="Texture2D" uid="uid://c4hmrkung0aee" path="res://ArteVisual/Animaciones/Lamiendo/gato lamiendose0001.png" id="3_w0vbr"]
+[ext_resource type="Texture2D" uid="uid://j5e3tl4lqaee" path="res://ArteVisual/Animaciones/Rascando/rascando0001.png" id="3_wndl7"]
+[ext_resource type="Texture2D" uid="uid://0e0c6bqcppam" path="res://ArteVisual/Animaciones/Lamiendo/gato lamiendose0002.png" id="4_cvlo1"]
+[ext_resource type="Texture2D" uid="uid://ba452jvnnxvbg" path="res://ArteVisual/Animaciones/Rascando/rascando0002.png" id="4_enaql"]
+[ext_resource type="Texture2D" uid="uid://qmny1y8rt8aw" path="res://ArteVisual/Animaciones/Lamiendo/gato lamiendose0003.png" id="5_ch5sn"]
+[ext_resource type="Texture2D" uid="uid://bg4q88wkpar0m" path="res://ArteVisual/Animaciones/Rascando/rascando0003.png" id="5_uvo5l"]
+[ext_resource type="Texture2D" uid="uid://bph0opegij34x" path="res://ArteVisual/Animaciones/Rascando/rascando0004.png" id="6_22y2m"]
+[ext_resource type="Texture2D" uid="uid://dqpoxriugygkx" path="res://ArteVisual/Animaciones/Lamiendo/gato lamiendose0004.png" id="6_u0xk8"]
+[ext_resource type="Texture2D" uid="uid://cphbd0qtfnqdn" path="res://ArteVisual/Animaciones/Rascando/rascando0005.png" id="7_upser"]
+[ext_resource type="Texture2D" uid="uid://b6xjl440gipen" path="res://ArteVisual/Animaciones/Lamiendo/gato lamiendose0005.png" id="7_vvt7v"]
+[ext_resource type="Texture2D" uid="uid://dvhhmtcx0n3mx" path="res://ArteVisual/Animaciones/Lamiendo/gato lamiendose0006.png" id="8_3emif"]
+[ext_resource type="Texture2D" uid="uid://d2noe82oyoehf" path="res://ArteVisual/Animaciones/Rascando/rascando0006.png" id="8_lrv8j"]
+[ext_resource type="Texture2D" uid="uid://d3bsthn3qq3hr" path="res://ArteVisual/Animaciones/Rascando/rascando0007.png" id="9_5avwe"]
+[ext_resource type="Texture2D" uid="uid://cc6mt6b2ni6g" path="res://ArteVisual/Animaciones/Maullando/gato maullando0000.png" id="9_15hcy"]
+[ext_resource type="Texture2D" uid="uid://di7hxs0du06dm" path="res://ArteVisual/Animaciones/Maullando/gato maullando0001.png" id="10_hh64t"]
+[ext_resource type="Texture2D" uid="uid://cnxbet3ycffe3" path="res://ArteVisual/Animaciones/Rascando/rascando0008.png" id="10_vks82"]
+[ext_resource type="Texture2D" uid="uid://bgpyrnirqxc2y" path="res://ArteVisual/Animaciones/Maullando/gato maullando0002.png" id="11_hgyke"]
+[ext_resource type="Texture2D" uid="uid://lhjq822ptcvg" path="res://ArteVisual/Animaciones/Rascando/rascando0009.png" id="11_w6xyw"]
+[ext_resource type="Texture2D" uid="uid://bp0bdb4wopi4l" path="res://ArteVisual/Animaciones/Rascando/rascando0010.png" id="12_blvwo"]
+[ext_resource type="Texture2D" uid="uid://cs33kb80yngwm" path="res://ArteVisual/Animaciones/Tirando/tirar0000.png" id="13_uvf3i"]
+[ext_resource type="Texture2D" uid="uid://cj17lwbud126a" path="res://ArteVisual/Animaciones/Tirando/tirar0001.png" id="14_elcb1"]
+[ext_resource type="Texture2D" uid="uid://cjjf25p0ql2xt" path="res://ArteVisual/Animaciones/Tirando/tirar0002.png" id="15_l0wru"]
+[ext_resource type="Texture2D" uid="uid://dn8hlxhcagjge" path="res://ArteVisual/Animaciones/Tirando/tirar0003.png" id="16_8rujr"]
+[ext_resource type="Texture2D" uid="uid://c51ls7i2jvyl7" path="res://ArteVisual/Animaciones/Tirando/tirar0004.png" id="17_ii0gu"]
+[ext_resource type="Texture2D" uid="uid://cqcd0p66ts4h4" path="res://ArteVisual/Animaciones/Tirando/tirar0005.png" id="18_duavm"]
+[ext_resource type="Texture2D" uid="uid://bp6riq5yxyegi" path="res://ArteVisual/Animaciones/Tirando/tirar0006.png" id="19_m3s6w"]
+[ext_resource type="Texture2D" uid="uid://c4vbknyhnfrfv" path="res://ArteVisual/Animaciones/Tirando/tirar0007.png" id="20_0trk2"]
+[ext_resource type="Texture2D" uid="uid://bri6ke8i7nsty" path="res://ArteVisual/Animaciones/Saltando/gato saltando0000.png" id="23_n1pfj"]
+[ext_resource type="Texture2D" uid="uid://j3nvmg3sgo2a" path="res://ArteVisual/Animaciones/Saltando/gato saltando0001.png" id="24_p26hr"]
+[ext_resource type="Texture2D" uid="uid://o8iaqhipndc5" path="res://ArteVisual/Animaciones/Saltando/gato saltando0002.png" id="25_c50hp"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mqihr"]
 animations = [{
 "frames": [{
+"duration": 1.5,
+"texture": ExtResource("2_8kb4i")
+}, {
+"duration": 1.5,
+"texture": ExtResource("3_w0vbr")
+}, {
+"duration": 1.5,
+"texture": ExtResource("4_cvlo1")
+}, {
+"duration": 1.5,
+"texture": ExtResource("5_ch5sn")
+}, {
+"duration": 1.5,
+"texture": ExtResource("6_u0xk8")
+}, {
+"duration": 1.5,
+"texture": ExtResource("7_vvt7v")
+}, {
+"duration": 1.5,
+"texture": ExtResource("8_3emif")
+}],
+"loop": true,
+"name": &"lamiendo",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 2.0,
+"texture": ExtResource("9_15hcy")
+}, {
+"duration": 10.0,
+"texture": ExtResource("10_hh64t")
+}, {
+"duration": 2.0,
+"texture": ExtResource("11_hgyke")
+}],
+"loop": true,
+"name": &"maullando",
+"speed": 10.0
+}, {
+"frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_lwir4")
+"texture": ExtResource("2_ba2qx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_gcarn")
+"texture": ExtResource("3_wndl7")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_ysdac")
+"texture": ExtResource("4_enaql")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_v3116")
+"texture": ExtResource("5_uvo5l")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_fm727")
+"texture": ExtResource("6_22y2m")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_0i2fu")
+"texture": ExtResource("7_upser")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_vd23c")
+"texture": ExtResource("8_lrv8j")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_l50a6")
+"texture": ExtResource("9_5avwe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_6l3nu")
+"texture": ExtResource("10_vks82")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_r2xn2")
+"texture": ExtResource("11_w6xyw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_e40h0")
+"texture": ExtResource("12_blvwo")
 }],
 "loop": true,
 "name": &"rascando",
 "speed": 10.0
 }, {
 "frames": [{
+"duration": 5.0,
+"texture": ExtResource("23_n1pfj")
+}, {
 "duration": 2.0,
-"texture": ExtResource("1_kfuf6")
+"texture": ExtResource("24_p26hr")
+}, {
+"duration": 5.0,
+"texture": ExtResource("25_c50hp")
+}],
+"loop": true,
+"name": &"saltando",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_uvf3i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_5uuuc")
+"texture": ExtResource("14_elcb1")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_s1x1m")
+"texture": ExtResource("15_l0wru")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_c0be3")
+"texture": ExtResource("16_8rujr")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_u7mge")
+"texture": ExtResource("17_ii0gu")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_gjg5m")
+"texture": ExtResource("18_duavm")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_rrxsr")
+"texture": ExtResource("19_m3s6w")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_xi73m")
+"texture": ExtResource("20_0trk2")
 }],
 "loop": true,
 "name": &"tirando",
@@ -97,7 +164,7 @@ script = ExtResource("1_44erm")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_mqihr")
-animation = &"rascando"
-frame_progress = 0.287082
+animation = &"lamiendo"
+frame_progress = 0.724893
 
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]

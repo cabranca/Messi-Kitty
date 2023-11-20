@@ -9,11 +9,33 @@ var contadorBasuraPrefix = "Basura acumulada: "
 var barraBasura
 var contadorNuevaBasura = 0
 var messiOnScene = false
-var spawnPositions = [Vector2(-1536, 910), Vector2(-1104, 638), Vector2(-640, 606), 
-	Vector2(-144, 702), Vector2(176, 848), Vector2(288, 670), Vector2(480, 478), 
-	Vector2(1184, 782), Vector2(1568, 670), Vector2(1344, 506), Vector2(2048, 758), 
-	Vector2(2240, 164), Vector2(2592, 220), Vector2(2592, 622), Vector2(3008, 565)]
+var spawnPositions = [
+	{"pos": Vector2(-627, 612), "animacion": "tirando", "nodo": "Mate" }, # Mate
+	{"pos": Vector2(-1650, 908), "animacion": "tirando", "nodo": "Zapatillas"}, # Zapas
+	{"pos": Vector2(418, 473), "animacion": "tirando", "nodo": "Planta"}, # Planta 1
+	{"pos": Vector2(1305, 501), "animacion": "tirando", "nodo": "Piluso"}, # Piluso
+	{"pos": Vector2(2085, 166), "animacion": "tirando", "nodo": "Corneta"}, # Corneta
+	{"pos": Vector2(2512, 218), "animacion": "tirando", "nodo": "Planta2"}, # Planta 2
+	{"pos": Vector2(2027, 776), "animacion": "tirando", "nodo": "Vuvuzela"}, # Vuvuzela
+	{"pos": Vector2(1717, 851), "animacion": "rascando", "nodo": "Nada"}, # Juguete
+	{"pos": Vector2(1300, 894), "animacion": "saltando", "nodo": "Vaso"}, # Vaso
+	{"pos": Vector2(-150, 867), "animacion": "saltando", "nodo": "Termo"}, # Termo
+	{"pos": Vector2(2615, 777), "animacion": "saltando", "nodo": "Portarretratos"}, # Portarretrato
+	{"pos": Vector2(2872, 934), "animacion": "lamiendo", "nodo": "Alfombra"}, # Alfombra
+	{"pos": Vector2(-687, 951), "animacion": "maullido", "nodo": "Nada"}, # Maullido 1
+	{"pos": Vector2(225, 654), "animacion": "maullido", "nodo": "Nada"}, # Maullido 2
+	{"pos": Vector2(3038, 549), "animacion": "maullido", "nodo": "Nada"} # Maullido 3
+]
+
 var condicionDerrota = 12
+
+var spawnPositionsVisited = [
+	false, false, false, false, false, 
+	false, false, false, false, false, 
+	false, false, false, false, false
+	]
+	
+var index = 0
 
 
 func _ready():
@@ -66,44 +88,50 @@ func _on_basura_timer_timeout():
 	var messi = messi_escena.instantiate()
 	
 	# Seteo la posicion incial donde sea que este el indice de spawn
-	var index = int(round(randf() * 15))
-	if index == 15:
-		index = 14
-	messi.position = spawnPositions[index]
+	var availableIndexFound = false
+	while(!availableIndexFound):
+		index = int(round(randf() * 15))
+		if index == 15:
+			index = 14
+		if !spawnPositionsVisited[index]:
+			availableIndexFound = true
+			
+	messi.position = spawnPositions[index]["pos"]
+	var animation = messi.find_child("AnimatedSprite2D")
+	# Falta la posibilidad de otra animacion
+	animation.play(spawnPositions[index]["animacion"])
+	messiOnScene = true
 	
 	# Agrego a Messi  y elijo una animacion
 	add_child(messi)
-	var animation = messi.find_child("AnimatedSprite2D")
-	# Falta la posibilidad de otra animacion
-	animation.play("tirando")
-	messiOnScene = true
+	
+	
 
 
 # Cuando Messi haya terminado la animacion se llama esta funcion para borrarlo y agregar basura
 func init_basura():
-	# Creo la nueva instancia de la escena Basura
-	var basura = basura_scene.instantiate()
+	# Encuentro el prop
+	var nombreNodo = spawnPositions[index]["nodo"]
+	if nombreNodo != "Nada":
+		var prop = get_node("Props/" + nombreNodo)
+		prop.find_child("Sprite1").visible = false
+		prop.find_child("Sprite2").visible = true
+		# Aumento el contador de basura
+		Variables.contadorBasura += 1
+	
+		# Cada 3 basuras que creo hago que una tenga sonido
+		if contadorNuevaBasura % 3 == 0:
+			$CaidaObjeto.play()
+		contadorNuevaBasura += 1
 	
 	# Encuentro a Messi
 	var messi = get_node("Messi")
-	
-	# Seteo la posicion a la nueva basura
-	basura.position = messi.position
 	
 	#Elimino a Messi
 	remove_child(messi)
 	messiOnScene = false
 	
-	# Aumento el contador de basura
-	Variables.contadorBasura += 1
 	
-	# Cada 5 basuras que creo hago que una tenga sonido
-	if contadorNuevaBasura % 5 == 0:
-		$CaidaObjeto.play()
-	contadorNuevaBasura += 1
-	
-	# Agrego el nuevo objeto como hijo del nodo principal
-	add_child(basura)
 
 
 func _input(ev):
