@@ -97,8 +97,8 @@ func init_basura():
 	# Aumento el contador de basura
 	Variables.contadorBasura += 1
 	
-	# Cada 5 basuras que creo hago que una tenga sonido
-	if contadorNuevaBasura % 5 == 0:
+	# Cada 3 basuras que creo hago que una tenga sonido
+	if contadorNuevaBasura % 3 == 0:
 		$CaidaObjeto.play()
 	contadorNuevaBasura += 1
 	
