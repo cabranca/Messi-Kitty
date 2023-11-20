@@ -147,7 +147,7 @@ func init_basura():
 
 
 func _input(ev):
-	if Input.is_key_pressed(KEY_ESCAPE):
+	if Input.is_action_just_released("Salir"):
 		if Variables.menuAbierto:
 			cerrar_menu_pausa()
 		else:
