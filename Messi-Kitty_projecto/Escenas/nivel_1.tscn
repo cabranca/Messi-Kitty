@@ -4,9 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://c6bwkdx64ojnm" path="res://Escenas/basura.tscn" id="2_rsyts"]
 [ext_resource type="AudioStream" uid="uid://dvcha2fkhgc1a" path="res://Audio/golpe_al_caer.mp3" id="3_6jt1v"]
 [ext_resource type="PackedScene" uid="uid://b4ik250edspbw" path="res://Escenas/menu_pausa.tscn" id="3_t8oy6"]
-[ext_resource type="Texture2D" uid="uid://bc8kl8engsp1g" path="res://ArteVisual/UI/fondo_posta_boceto.png" id="4_cccpe"]
 [ext_resource type="Script" path="res://Codigo/Fondo.gd" id="4_lp7fj"]
 [ext_resource type="AudioStream" uid="uid://b0teva6wcqtgm" path="res://Audio/chill_music.mp3" id="4_t5bgk"]
+[ext_resource type="Texture2D" uid="uid://brcjygp4r5eyr" path="res://ArteVisual/Escenario final completo.png" id="5_mgret"]
 [ext_resource type="Texture2D" uid="uid://sybm2flx67bd" path="res://ArteVisual/UI/ph_flechita1.png" id="8_lttj1"]
 [ext_resource type="Texture2D" uid="uid://dl0dyubidp1pn" path="res://ArteVisual/UI/ph_flechita2.png" id="9_7fn21"]
 [ext_resource type="Theme" uid="uid://ddoqlysjpkcmb" path="res://ArteVisual/TemasGodot/TemaletraChica.tres" id="9_xcos8"]
@@ -28,7 +28,7 @@ offset_left = -1920.0
 offset_right = 3840.0
 offset_bottom = 1080.0
 scale = Vector2(1, 0.999999)
-texture = ExtResource("4_cccpe")
+texture = ExtResource("5_mgret")
 
 [node name="CaidaObjeto" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_6jt1v")
