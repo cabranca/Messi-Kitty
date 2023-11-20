@@ -25,3 +25,7 @@ func _on_boton_creditos_button_down():
 func _on_boton_salir_button_down():
 	get_tree().quit()
 
+
+
+func _on_boton_cinematica_button_down():
+	get_tree().change_scene_to_file("res://Escenas/cinematica.tscn")

@@ -103,6 +103,10 @@ texture_hover = ExtResource("7_2n3dw")
 layout_mode = 2
 text = "Créditos"
 
+[node name="BotonCinematica" type="Button" parent="Pantalla/AspectRatioContainer/VBoxContainer"]
+layout_mode = 2
+text = "Ver cinemática"
+
 [node name="ColitaGato" type="AnimatedSprite2D" parent="."]
 position = Vector2(421, 941)
 sprite_frames = SubResource("SpriteFrames_8f6ci")
@@ -120,3 +124,4 @@ stream = ExtResource("2_u656i")
 [connection signal="button_down" from="Pantalla/AspectRatioContainer/VBoxContainer/HBoxContainer/BotonInicio" to="." method="_on_boton_inicio_button_down"]
 [connection signal="button_down" from="Pantalla/AspectRatioContainer/VBoxContainer/HBoxContainer/BotonSalir" to="." method="_on_boton_salir_button_down"]
 [connection signal="button_down" from="Pantalla/AspectRatioContainer/VBoxContainer/BotonCreditos" to="." method="_on_boton_creditos_button_down"]
+[connection signal="button_down" from="Pantalla/AspectRatioContainer/VBoxContainer/BotonCinematica" to="." method="_on_boton_cinematica_button_down"]
