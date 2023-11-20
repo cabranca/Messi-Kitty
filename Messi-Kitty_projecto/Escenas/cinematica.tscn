@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0y5naqc7vsrv"]
+
+[ext_resource type="Script" path="res://Escenas/videoCine.gd" id="1_gu1ew"]
+[ext_resource type="VideoStream" path="res://ArteVisual/Video/cinematicaKittyB.ogv" id="2_oomqv"]
+[ext_resource type="Texture2D" uid="uid://cv5mlolnnfywj" path="res://ArteVisual/UI/Flechas.png" id="3_3ev5q"]
+[ext_resource type="Texture2D" uid="uid://b1l7nu45m4kch" path="res://ArteVisual/UI/FlechasB.png" id="4_3q3dh"]
+
+[node name="Cinematica" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_gu1ew")
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+stream = ExtResource("2_oomqv")
+autoplay = true
+
+[node name="BotonAmenu" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 4.0
+offset_top = 932.0
+offset_right = 154.0
+offset_bottom = 1082.0
+texture_normal = ExtResource("3_3ev5q")
+texture_pressed = ExtResource("4_3q3dh")
+
+[node name="BotonAnivel" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1774.0
+offset_top = 930.0
+offset_right = 1924.0
+offset_bottom = 1080.0
+grow_horizontal = 0
+grow_vertical = 2
+texture_normal = ExtResource("3_3ev5q")
+texture_pressed = ExtResource("4_3q3dh")
+flip_h = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="button_up" from="BotonAmenu" to="." method="_on_texture_button_button_up"]
+[connection signal="button_up" from="BotonAnivel" to="." method="_on_boton_anivel_button_up"]

@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://b4ik250edspbw"]
+[gd_scene load_steps=5 format=3 uid="uid://b4ik250edspbw"]
 
 [ext_resource type="Script" path="res://Codigo/menu_pausa.gd" id="1_x1r3m"]
+[ext_resource type="Theme" uid="uid://ddoqlysjpkcmb" path="res://ArteVisual/TemasGodot/TemaletraChica.tres" id="2_darxd"]
+[ext_resource type="Texture2D" uid="uid://c3fassoabea3k" path="res://ArteVisual/UI/bg.png" id="3_ev2un"]
+[ext_resource type="Texture2D" uid="uid://d2pj2hmpijmu2" path="res://ArteVisual/UI/logo.png" id="4_406ov"]
 
 [node name="MenuPausa" type="Node"]
 script = ExtResource("1_x1r3m")
@@ -12,8 +15,9 @@ offset_right = 1920.0
 offset_bottom = 1080.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
+theme = ExtResource("2_darxd")
 
-[node name="ColorRect" type="ColorRect" parent="Pantalla"]
+[node name="ColorRect" type="TextureRect" parent="Pantalla"]
 modulate = Color(1, 1, 1, 0.501961)
 layout_mode = 1
 anchors_preset = 5
@@ -21,9 +25,10 @@ anchor_left = 0.5
 anchor_right = 0.5
 offset_left = -2880.0
 offset_right = 2880.0
-offset_bottom = 1091.0
+offset_bottom = 1080.0
 grow_horizontal = 2
-color = Color(0.498039, 0.627451, 0.635294, 1)
+texture = ExtResource("3_ev2un")
+stretch_mode = 1
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="Pantalla"]
 layout_mode = 1
@@ -36,13 +41,15 @@ offset_bottom = 1082.0
 grow_horizontal = 2
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Pantalla/AspectRatioContainer"]
+custom_minimum_size = Vector2(10, 10)
 layout_mode = 2
 alignment = 1
 
-[node name="Titulo" type="Label" parent="Pantalla/AspectRatioContainer/VBoxContainer"]
+[node name="Titulo" type="TextureRect" parent="Pantalla/AspectRatioContainer/VBoxContainer"]
 layout_mode = 2
-text = "Messi-kitty"
-horizontal_alignment = 1
+size_flags_horizontal = 4
+texture = ExtResource("4_406ov")
+stretch_mode = 2
 
 [node name="BotonReanudar" type="Button" parent="Pantalla/AspectRatioContainer/VBoxContainer"]
 layout_mode = 2
@@ -65,10 +72,11 @@ grow_horizontal = 0
 layout_mode = 2
 alignment = 1
 
-[node name="Titulo" type="Label" parent="Pantalla/AspectRatioContainer2/VBoxContainer"]
+[node name="Titulo2" type="TextureRect" parent="Pantalla/AspectRatioContainer2/VBoxContainer"]
 layout_mode = 2
-text = "Messi-kitty"
-horizontal_alignment = 1
+size_flags_horizontal = 4
+texture = ExtResource("4_406ov")
+stretch_mode = 2
 
 [node name="BotonReanudar" type="Button" parent="Pantalla/AspectRatioContainer2/VBoxContainer"]
 layout_mode = 2
@@ -92,10 +100,11 @@ grow_horizontal = 0
 layout_mode = 2
 alignment = 1
 
-[node name="Titulo" type="Label" parent="Pantalla/AspectRatioContainer3/VBoxContainer"]
+[node name="Titulo3" type="TextureRect" parent="Pantalla/AspectRatioContainer3/VBoxContainer"]
 layout_mode = 2
-text = "Messi-kitty"
-horizontal_alignment = 1
+size_flags_horizontal = 4
+texture = ExtResource("4_406ov")
+stretch_mode = 2
 
 [node name="BotonReanudar" type="Button" parent="Pantalla/AspectRatioContainer3/VBoxContainer"]
 layout_mode = 2
