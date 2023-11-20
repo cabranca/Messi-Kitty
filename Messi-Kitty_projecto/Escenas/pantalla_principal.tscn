@@ -108,10 +108,9 @@ layout_mode = 2
 text = "Ver cinemática"
 
 [node name="ColitaGato" type="AnimatedSprite2D" parent="."]
-position = Vector2(421, 941)
+position = Vector2(417, 970)
 sprite_frames = SubResource("SpriteFrames_8f6ci")
-frame = 7
-frame_progress = 1.0
+frame_progress = 0.597731
 script = ExtResource("7_3ms31")
 
 [node name="MusicaMenu" type="AudioStreamPlayer" parent="."]
