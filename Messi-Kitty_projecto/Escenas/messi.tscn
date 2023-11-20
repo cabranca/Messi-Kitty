@@ -165,7 +165,6 @@ script = ExtResource("1_44erm")
 scale = Vector2(0.25, 0.25)
 sprite_frames = SubResource("SpriteFrames_mqihr")
 animation = &"lamiendo"
-autoplay = "lamiendo"
 frame_progress = 0.724893
 
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]

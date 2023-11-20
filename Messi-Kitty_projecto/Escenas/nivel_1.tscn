@@ -5,8 +5,8 @@
 [ext_resource type="AudioStream" uid="uid://dvcha2fkhgc1a" path="res://Audio/golpe_al_caer.mp3" id="3_6jt1v"]
 [ext_resource type="PackedScene" uid="uid://b4ik250edspbw" path="res://Escenas/menu_pausa.tscn" id="3_t8oy6"]
 [ext_resource type="Script" path="res://Codigo/Fondo.gd" id="4_lp7fj"]
-[ext_resource type="AudioStream" uid="uid://b0teva6wcqtgm" path="res://Audio/chill_music.mp3" id="4_t5bgk"]
 [ext_resource type="Texture2D" uid="uid://brcjygp4r5eyr" path="res://ArteVisual/Escenario final completo.png" id="5_mgret"]
+[ext_resource type="AudioStream" uid="uid://bngqb4b4yw25t" path="res://Audio/Messi Kitty, Gameplay Song.wav" id="7_356pt"]
 [ext_resource type="Theme" uid="uid://ddoqlysjpkcmb" path="res://ArteVisual/TemasGodot/TemaletraChica.tres" id="9_xcos8"]
 [ext_resource type="Texture2D" uid="uid://cv5mlolnnfywj" path="res://ArteVisual/UI/Flechas.png" id="10_8jfhf"]
 [ext_resource type="PackedScene" uid="uid://bixtxdklmw80y" path="res://Escenas/messi.tscn" id="10_r3kik"]
@@ -50,9 +50,8 @@ texture = ExtResource("5_mgret")
 stream = ExtResource("3_6jt1v")
 volume_db = -11.19
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_t5bgk")
-volume_db = -13.2
+[node name="MainTrack" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_356pt")
 autoplay = true
 
 [node name="Ui" type="Node2D" parent="."]
@@ -128,6 +127,7 @@ anchor_mode = 0
 
 [node name="Alfombra" type="StaticBody2D" parent="Props"]
 position = Vector2(2827, 931)
+input_pickable = true
 script = ExtResource("14_byet4")
 
 [node name="Sprite1" type="Sprite2D" parent="Props/Alfombra"]
@@ -145,6 +145,7 @@ texture = ExtResource("15_ag5ng")
 polygon = PackedVector2Array(57, -24, 138, -8, 197, 2, 244, 14, 289, 37, 303, 65, 275, 85, 225, 108, 165, 117, 59, 126, -43, 116, -114, 89, -156, 56, -162, 32, -92, 4, 2, -18)
 
 [node name="Planta" type="StaticBody2D" parent="Props"]
+input_pickable = true
 script = ExtResource("14_byet4")
 
 [node name="Sprite1" type="Sprite2D" parent="Props/Planta"]
@@ -161,6 +162,7 @@ texture = ExtResource("17_x5w0u")
 polygon = PackedVector2Array(470, 468, 473, 451, 485, 448, 499, 446, 515, 446, 534, 445, 547, 451, 552, 456, 552, 466, 548, 488, 544, 527, 529, 533, 495, 532, 479, 525)
 
 [node name="Portarretratos" type="StaticBody2D" parent="Props"]
+input_pickable = true
 script = ExtResource("14_byet4")
 
 [node name="Sprite1" type="Sprite2D" parent="Props/Portarretratos"]
@@ -178,6 +180,7 @@ texture = ExtResource("19_a11sk")
 polygon = PackedVector2Array(2592, 652, 2602, 652, 2610, 671, 2633, 672, 2657, 681, 2650, 688, 2573, 688, 2561, 682, 2559, 669, 2598, 673, 2586, 653)
 
 [node name="Vaso" type="StaticBody2D" parent="Props"]
+input_pickable = true
 script = ExtResource("14_byet4")
 
 [node name="Sprite1" type="Sprite2D" parent="Props/Vaso"]
@@ -195,6 +198,7 @@ texture = ExtResource("21_v3viw")
 polygon = PackedVector2Array(1398, 1050, 1381, 1053, 1367, 1050, 1349, 1042, 1345, 1036, 1344, 1027, 1348, 1021, 1352, 1018, 1364, 1016, 1386, 1016, 1396, 1031, 1395, 1041)
 
 [node name="Zapatillas" type="StaticBody2D" parent="Props"]
+input_pickable = true
 script = ExtResource("14_byet4")
 
 [node name="Sprite1" type="Sprite2D" parent="Props/Zapatillas"]
@@ -212,6 +216,7 @@ texture = ExtResource("23_d3fom")
 polygon = PackedVector2Array(-1603, 883, -1582, 885, -1564, 870, -1533, 878, -1533, 893, -1491, 895, -1480, 904, -1495, 916, -1487, 926, -1497, 944, -1509, 948, -1513, 957, -1525, 960, -1546, 964, -1556, 996, -1578, 987, -1593, 980, -1601, 962, -1609, 946, -1612, 936)
 
 [node name="Vuvuzela" type="StaticBody2D" parent="Props"]
+input_pickable = true
 script = ExtResource("14_byet4")
 
 [node name="Sprite1" type="Sprite2D" parent="Props/Vuvuzela"]
@@ -230,6 +235,7 @@ texture = ExtResource("24_lq053")
 polygon = PackedVector2Array(2174, 834, 2205, 847, 2297, 857, 2347, 858, 2347, 871, 2298, 868, 2210, 877, 2180, 882)
 
 [node name="Termo" type="StaticBody2D" parent="Props"]
+input_pickable = true
 script = ExtResource("14_byet4")
 
 [node name="Sprite1" type="Sprite2D" parent="Props/Termo"]
@@ -248,6 +254,7 @@ texture = ExtResource("25_fsccr")
 polygon = PackedVector2Array(-193, 989, -56, 960, -54, 1032, -98, 1027, -102, 1052, -147, 1042, -159, 1023, -170, 1020, -172, 1008, -192, 999)
 
 [node name="Mate" type="StaticBody2D" parent="Props"]
+input_pickable = true
 script = ExtResource("14_byet4")
 
 [node name="Sprite1" type="Sprite2D" parent="Props/Mate"]
@@ -266,6 +273,7 @@ texture = ExtResource("26_bk25f")
 polygon = PackedVector2Array(-506, 669, -512, 657, -504, 627, -492, 628, -475, 641, -465, 662)
 
 [node name="Corneta" type="StaticBody2D" parent="Props"]
+input_pickable = true
 script = ExtResource("14_byet4")
 
 [node name="Sprite1" type="Sprite2D" parent="Props/Corneta"]
@@ -282,6 +290,7 @@ texture = ExtResource("27_yqkf7")
 polygon = PackedVector2Array(2372, 191, 2442, 275, 2453, 269, 2398, 169)
 
 [node name="Planta2" type="StaticBody2D" parent="Props"]
+input_pickable = true
 script = ExtResource("14_byet4")
 
 [node name="Sprite1" type="Sprite2D" parent="Props/Planta2"]
@@ -299,6 +308,7 @@ texture = ExtResource("17_x5w0u")
 polygon = PackedVector2Array(2575, 267, 2586, 276, 2614, 278, 2631, 276, 2639, 269, 2646, 211, 2644, 201, 2625, 192, 2612, 192, 2594, 193, 2576, 197, 2568, 203, 2565, 212, 2568, 219, 2570, 223, 2571, 228)
 
 [node name="Piluso" type="StaticBody2D" parent="Props"]
+input_pickable = true
 script = ExtResource("14_byet4")
 
 [node name="Sprite1" type="Sprite2D" parent="Props/Piluso"]
