@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://Codigo/autoload.gd" id="1_35ret"]
 [ext_resource type="Theme" uid="uid://ddoqlysjpkcmb" path="res://ArteVisual/TemasGodot/TemaletraChica.tres" id="2_eeopn"]
-[ext_resource type="AudioStream" uid="uid://4sootctac88x" path="res://Audio/play_button_click.wav" id="2_u656i"]
 [ext_resource type="Texture2D" uid="uid://c38b32isd0fj7" path="res://ArteVisual/UI/PantallaPrincipal/Pantalla inicio_0_color_fondo.png" id="3_hmdk2"]
 [ext_resource type="Texture2D" uid="uid://bs4xjlwnpcnst" path="res://ArteVisual/UI/PantallaPrincipal/boton play.png" id="4_uwjub"]
 [ext_resource type="Texture2D" uid="uid://dpdcquem1gidy" path="res://ArteVisual/UI/PantallaPrincipal/boton play apretado.png" id="5_damc7"]
@@ -16,6 +15,7 @@
 [ext_resource type="Texture2D" uid="uid://tkpqyokvutyc" path="res://ArteVisual/UI/PantallaPrincipal/Pantalla inicio_0_color_cola 5.png" id="12_3kiot"]
 [ext_resource type="AudioStream" uid="uid://crtxfqde4g4h8" path="res://Audio/Messi_Kitty_menu_song.wav" id="14_ryu67"]
 [ext_resource type="Script" path="res://Codigo/MusicaMenu.gd" id="14_tvp7s"]
+[ext_resource type="AudioStream" uid="uid://4sootctac88x" path="res://Audio/fx/play_button_click.wav" id="16_hubsr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8f6ci"]
 animations = [{
@@ -119,7 +119,7 @@ stream = ExtResource("14_ryu67")
 script = ExtResource("14_tvp7s")
 
 [node name="PlayButtonClick" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_u656i")
+stream = ExtResource("16_hubsr")
 
 [connection signal="button_down" from="Pantalla/AspectRatioContainer/VBoxContainer/HBoxContainer/BotonInicio" to="." method="_on_boton_inicio_button_down"]
 [connection signal="button_down" from="Pantalla/AspectRatioContainer/VBoxContainer/HBoxContainer/BotonSalir" to="." method="_on_boton_salir_button_down"]

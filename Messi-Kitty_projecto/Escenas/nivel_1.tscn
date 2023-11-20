@@ -1,8 +1,7 @@
-[gd_scene load_steps=30 format=3 uid="uid://dvbbttjxg3ek7"]
+[gd_scene load_steps=33 format=3 uid="uid://dvbbttjxg3ek7"]
 
 [ext_resource type="Script" path="res://Codigo/nivel_1.gd" id="1_33hxw"]
 [ext_resource type="PackedScene" uid="uid://c6bwkdx64ojnm" path="res://Escenas/basura.tscn" id="2_rsyts"]
-[ext_resource type="AudioStream" uid="uid://dvcha2fkhgc1a" path="res://Audio/golpe_al_caer.mp3" id="3_6jt1v"]
 [ext_resource type="PackedScene" uid="uid://b4ik250edspbw" path="res://Escenas/menu_pausa.tscn" id="3_t8oy6"]
 [ext_resource type="Script" path="res://Codigo/Fondo.gd" id="4_lp7fj"]
 [ext_resource type="Texture2D" uid="uid://brcjygp4r5eyr" path="res://ArteVisual/Escenario final completo.png" id="5_mgret"]
@@ -17,9 +16,11 @@
 [ext_resource type="Texture2D" uid="uid://bpbd1iqlfmrmc" path="res://ArteVisual/Props/alfombra.png" id="14_uwx5t"]
 [ext_resource type="Texture2D" uid="uid://bmv1fsnypeeqb" path="res://ArteVisual/Props/alfombra_rota.png" id="15_ag5ng"]
 [ext_resource type="Texture2D" uid="uid://bv2mgt0j5uewf" path="res://ArteVisual/Props/planta.png" id="16_0qj44"]
+[ext_resource type="AudioStream" uid="uid://cryr6bct2a6kb" path="res://Audio/fx/rasgando.wav" id="16_y2ffd"]
 [ext_resource type="Texture2D" uid="uid://dqol4dvivrpai" path="res://ArteVisual/Props/planta_rota.png" id="17_x5w0u"]
 [ext_resource type="Texture2D" uid="uid://kyoc65nek1r1" path="res://ArteVisual/Props/portaretrato.png" id="18_bcqly"]
 [ext_resource type="Texture2D" uid="uid://c4dm655cnoll5" path="res://ArteVisual/Props/portaretrato_caiduchis.png" id="19_a11sk"]
+[ext_resource type="AudioStream" uid="uid://dvcha2fkhgc1a" path="res://Audio/fx/golpe_al_caer.mp3" id="20_nm3fi"]
 [ext_resource type="Texture2D" uid="uid://bsa47e1kv4nre" path="res://ArteVisual/Props/vaso liquido.png" id="20_xe4q0"]
 [ext_resource type="Texture2D" uid="uid://cfnd8417m38jn" path="res://ArteVisual/Props/vaso liquido_caido.png" id="21_v3viw"]
 [ext_resource type="Texture2D" uid="uid://df7bp078ljqej" path="res://ArteVisual/Props/zapatillas.png" id="22_i7v3a"]
@@ -27,8 +28,10 @@
 [ext_resource type="Texture2D" uid="uid://djka6en17wlr7" path="res://ArteVisual/Props/vuvuzela_props.png" id="24_lq053"]
 [ext_resource type="Texture2D" uid="uid://1oc1ifpx4658" path="res://ArteVisual/Props/termo.png" id="25_fsccr"]
 [ext_resource type="Texture2D" uid="uid://bbu3klf66wl6a" path="res://ArteVisual/Props/mate_bombilla.png" id="26_bk25f"]
+[ext_resource type="AudioStream" uid="uid://bmr3aub2qa0qt" path="res://Audio/fx/caida desorden  2.wav" id="26_fpqru"]
 [ext_resource type="Texture2D" uid="uid://b308jdqfstbqq" path="res://ArteVisual/Props/cornetita_props.png" id="27_yqkf7"]
 [ext_resource type="Texture2D" uid="uid://dm5jug1l1v8ei" path="res://ArteVisual/Props/sombrero_props_transparente.png" id="28_y1qqt"]
+[ext_resource type="AudioStream" uid="uid://fmpfqqb3i87v" path="res://Audio/fx/maullido.wav" id="32_jenid"]
 
 [node name="Nivel1" type="Node"]
 script = ExtResource("1_33hxw")
@@ -45,10 +48,6 @@ offset_right = 3840.0
 offset_bottom = 1080.0
 scale = Vector2(1, 0.999999)
 texture = ExtResource("5_mgret")
-
-[node name="CaidaObjeto" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("3_6jt1v")
-volume_db = -11.19
 
 [node name="MainTrack" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_356pt")
@@ -179,6 +178,10 @@ texture = ExtResource("19_a11sk")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Portarretratos"]
 polygon = PackedVector2Array(2592, 652, 2602, 652, 2610, 671, 2633, 672, 2657, 681, 2650, 688, 2573, 688, 2561, 682, 2559, 669, 2598, 673, 2586, 653)
 
+[node name="FX" type="AudioStreamPlayer" parent="Props/Portarretratos"]
+stream = ExtResource("20_nm3fi")
+volume_db = -11.19
+
 [node name="Vaso" type="StaticBody2D" parent="Props"]
 input_pickable = true
 script = ExtResource("14_byet4")
@@ -196,6 +199,10 @@ texture = ExtResource("21_v3viw")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Vaso"]
 polygon = PackedVector2Array(1398, 1050, 1381, 1053, 1367, 1050, 1349, 1042, 1345, 1036, 1344, 1027, 1348, 1021, 1352, 1018, 1364, 1016, 1386, 1016, 1396, 1031, 1395, 1041)
+
+[node name="FX" type="AudioStreamPlayer" parent="Props/Vaso"]
+stream = ExtResource("20_nm3fi")
+volume_db = -11.19
 
 [node name="Zapatillas" type="StaticBody2D" parent="Props"]
 input_pickable = true
@@ -234,6 +241,10 @@ texture = ExtResource("24_lq053")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Vuvuzela"]
 polygon = PackedVector2Array(2174, 834, 2205, 847, 2297, 857, 2347, 858, 2347, 871, 2298, 868, 2210, 877, 2180, 882)
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Props/Vuvuzela"]
+position = Vector2(2088, 747)
+stream = ExtResource("26_fpqru")
+
 [node name="Termo" type="StaticBody2D" parent="Props"]
 input_pickable = true
 script = ExtResource("14_byet4")
@@ -252,6 +263,10 @@ texture = ExtResource("25_fsccr")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Termo"]
 polygon = PackedVector2Array(-193, 989, -56, 960, -54, 1032, -98, 1027, -102, 1052, -147, 1042, -159, 1023, -170, 1020, -172, 1008, -192, 999)
+
+[node name="FX" type="AudioStreamPlayer" parent="Props/Termo"]
+stream = ExtResource("20_nm3fi")
+volume_db = -11.19
 
 [node name="Mate" type="StaticBody2D" parent="Props"]
 input_pickable = true
@@ -272,6 +287,10 @@ texture = ExtResource("26_bk25f")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Mate"]
 polygon = PackedVector2Array(-506, 669, -512, 657, -504, 627, -492, 628, -475, 641, -465, 662)
 
+[node name="FX" type="AudioStreamPlayer" parent="Props/Mate"]
+stream = ExtResource("20_nm3fi")
+volume_db = -11.19
+
 [node name="Corneta" type="StaticBody2D" parent="Props"]
 input_pickable = true
 script = ExtResource("14_byet4")
@@ -288,6 +307,10 @@ texture = ExtResource("27_yqkf7")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Corneta"]
 polygon = PackedVector2Array(2372, 191, 2442, 275, 2453, 269, 2398, 169)
+
+[node name="FX" type="AudioStreamPlayer" parent="Props/Corneta"]
+stream = ExtResource("20_nm3fi")
+volume_db = -11.19
 
 [node name="Planta2" type="StaticBody2D" parent="Props"]
 input_pickable = true
@@ -325,6 +348,14 @@ texture = ExtResource("28_y1qqt")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Props/Piluso"]
 polygon = PackedVector2Array(742, 975, 751, 969, 775, 965, 797, 966, 819, 971, 823, 978, 811, 988, 806, 997, 805, 1028, 782, 1030, 760, 1028, 757, 1025, 758, 998)
+
+[node name="Maullido" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("32_jenid")
+max_distance = 5000.0
+attenuation = 0.486136
+
+[node name="Rascar" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("16_y2ffd")
 
 [connection signal="timeout" from="BasuraTimer" to="." method="_on_basura_timer_timeout"]
 [connection signal="button_down" from="Ui/FlechaIz" to="Ui" method="_on_flecha_iz_button_down"]

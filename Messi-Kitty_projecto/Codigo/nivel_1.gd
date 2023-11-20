@@ -17,7 +17,7 @@ var spawnPositions = [
 	{"pos": Vector2(2085, 166), "animacion": "tirando", "nodo": "Corneta"}, # Corneta
 	{"pos": Vector2(2512, 218), "animacion": "tirando", "nodo": "Planta2"}, # Planta 2
 	{"pos": Vector2(2027, 776), "animacion": "tirando", "nodo": "Vuvuzela"}, # Vuvuzela
-	{"pos": Vector2(1717, 851), "animacion": "rascando", "nodo": "Nada"}, # Juguete
+	{"pos": Vector2(1717, 851), "animacion": "rascando", "nodo": "Juguete"}, # Juguete
 	{"pos": Vector2(1300, 894), "animacion": "saltando", "nodo": "Vaso"}, # Vaso
 	{"pos": Vector2(-150, 867), "animacion": "saltando", "nodo": "Termo"}, # Termo
 	{"pos": Vector2(2615, 777), "animacion": "saltando", "nodo": "Portarretratos"}, # Portarretrato
@@ -84,6 +84,7 @@ func game_over():
 
 # Cuando el timer llega a cero spawneo a Messi en una posicion de las posibles
 func _on_basura_timer_timeout():
+	print("Messi spawn")
 	# Creo una instancia de Messi
 	var messi = messi_escena.instantiate()
 	
@@ -100,6 +101,11 @@ func _on_basura_timer_timeout():
 	var animation = messi.find_child("AnimatedSprite2D")
 	# Falta la posibilidad de otra animacion
 	animation.play(spawnPositions[index]["animacion"])
+	$Maullido.position = messi.position
+	$Maullido.play()
+	print("Messi maulla")
+	if spawnPositions[index]["nodo"] == "Juguete" or spawnPositions[index]["nodo"] == "Alfombra":
+		$Rascar.play()
 	messiOnScene = true
 	
 	# Agrego a Messi  y elijo una animacion
@@ -112,23 +118,29 @@ func _on_basura_timer_timeout():
 func init_basura():
 	# Encuentro el prop
 	var nombreNodo = spawnPositions[index]["nodo"]
-	if nombreNodo != "Nada":
+	if nombreNodo != "Nada" and nombreNodo != "Juguete":
 		var prop = get_node("Props/" + nombreNodo)
 		prop.find_child("Sprite1").visible = false
 		prop.find_child("Sprite2").visible = true
 		# Aumento el contador de basura
 		Variables.contadorBasura += 1
 	
+		var fx = prop.find_child("FX")
+		if fx != null:
+			fx.play()
+		
 		# Cada 3 basuras que creo hago que una tenga sonido
-		if contadorNuevaBasura % 3 == 0:
-			$CaidaObjeto.play()
-		contadorNuevaBasura += 1
+		#if contadorNuevaBasura % 3 == 0:
+			#$CaidaObjeto.play()
+		#contadorNuevaBasura += 1
 	
 	# Encuentro a Messi
 	var messi = get_node("Messi")
 	
 	#Elimino a Messi
 	remove_child(messi)
+	$Rascar.stop()
+	#$FXRascar.stop()
 	messiOnScene = false
 	
 	
