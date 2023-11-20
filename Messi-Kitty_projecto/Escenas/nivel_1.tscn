@@ -7,12 +7,12 @@
 [ext_resource type="Script" path="res://Codigo/Fondo.gd" id="4_lp7fj"]
 [ext_resource type="AudioStream" uid="uid://b0teva6wcqtgm" path="res://Audio/chill_music.mp3" id="4_t5bgk"]
 [ext_resource type="Texture2D" uid="uid://brcjygp4r5eyr" path="res://ArteVisual/Escenario final completo.png" id="5_mgret"]
-[ext_resource type="Texture2D" uid="uid://sybm2flx67bd" path="res://ArteVisual/UI/ph_flechita1.png" id="8_lttj1"]
-[ext_resource type="Texture2D" uid="uid://dl0dyubidp1pn" path="res://ArteVisual/UI/ph_flechita2.png" id="9_7fn21"]
 [ext_resource type="Theme" uid="uid://ddoqlysjpkcmb" path="res://ArteVisual/TemasGodot/TemaletraChica.tres" id="9_xcos8"]
+[ext_resource type="Texture2D" uid="uid://cv5mlolnnfywj" path="res://ArteVisual/UI/Flechas.png" id="10_8jfhf"]
 [ext_resource type="PackedScene" uid="uid://bixtxdklmw80y" path="res://Escenas/messi.tscn" id="10_r3kik"]
-[ext_resource type="Texture2D" uid="uid://juagss4q05fx" path="res://ArteVisual/ph_BarraFondo.png" id="10_x8dvl"]
-[ext_resource type="Texture2D" uid="uid://4bh5xvf5c2l4" path="res://ArteVisual/ph_BarraRelleno.png" id="11_i0av5"]
+[ext_resource type="Texture2D" uid="uid://b1l7nu45m4kch" path="res://ArteVisual/UI/FlechasB.png" id="11_lvh0a"]
+[ext_resource type="Texture2D" uid="uid://s4qhe2vhg603" path="res://ArteVisual/UI/BarraOrden.png" id="12_lsyay"]
+[ext_resource type="Texture2D" uid="uid://buvpfxjdsu7kh" path="res://ArteVisual/UI/BarraDesOrden.png" id="13_mne26"]
 [ext_resource type="Script" path="res://Codigo/Basura.gd" id="14_byet4"]
 [ext_resource type="Texture2D" uid="uid://bpbd1iqlfmrmc" path="res://ArteVisual/Props/alfombra.png" id="14_uwx5t"]
 [ext_resource type="Texture2D" uid="uid://bmv1fsnypeeqb" path="res://ArteVisual/Props/alfombra_rota.png" id="15_ag5ng"]
@@ -93,8 +93,8 @@ offset_top = 540.0
 offset_right = 122.0
 offset_bottom = 592.0
 grow_vertical = 2
-texture_normal = ExtResource("8_lttj1")
-texture_pressed = ExtResource("9_7fn21")
+texture_normal = ExtResource("10_8jfhf")
+texture_pressed = ExtResource("11_lvh0a")
 
 [node name="FlechaDe" type="TextureButton" parent="Ui"]
 anchors_preset = 6
@@ -108,8 +108,8 @@ offset_right = 1850.0
 offset_bottom = 592.0
 grow_horizontal = 0
 grow_vertical = 2
-texture_normal = ExtResource("8_lttj1")
-texture_pressed = ExtResource("9_7fn21")
+texture_normal = ExtResource("10_8jfhf")
+texture_pressed = ExtResource("11_lvh0a")
 flip_h = true
 
 [node name="BarraBasura" type="TextureProgressBar" parent="Ui"]
@@ -118,8 +118,8 @@ offset_top = 40.0
 offset_right = 1550.0
 offset_bottom = 100.0
 max_value = 30.0
-texture_under = ExtResource("10_x8dvl")
-texture_progress = ExtResource("11_i0av5")
+texture_under = ExtResource("12_lsyay")
+texture_progress = ExtResource("13_mne26")
 
 [node name="Camera2D" type="Camera2D" parent="Ui"]
 anchor_mode = 0
