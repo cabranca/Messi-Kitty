@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dvbbttjxg3ek7"]
+[gd_scene load_steps=14 format=3 uid="uid://dvbbttjxg3ek7"]
 
 [ext_resource type="Script" path="res://Codigo/nivel_1.gd" id="1_33hxw"]
 [ext_resource type="PackedScene" uid="uid://c6bwkdx64ojnm" path="res://Escenas/basura.tscn" id="2_rsyts"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://b0teva6wcqtgm" path="res://Audio/chill_music.mp3" id="4_t5bgk"]
 [ext_resource type="Texture2D" uid="uid://sybm2flx67bd" path="res://ArteVisual/UI/ph_flechita1.png" id="8_lttj1"]
 [ext_resource type="Texture2D" uid="uid://dl0dyubidp1pn" path="res://ArteVisual/UI/ph_flechita2.png" id="9_7fn21"]
+[ext_resource type="Theme" uid="uid://ddoqlysjpkcmb" path="res://ArteVisual/TemasGodot/TemaletraChica.tres" id="9_xcos8"]
 [ext_resource type="PackedScene" uid="uid://bixtxdklmw80y" path="res://Escenas/messi.tscn" id="10_r3kik"]
 [ext_resource type="Texture2D" uid="uid://juagss4q05fx" path="res://ArteVisual/ph_BarraFondo.png" id="10_x8dvl"]
 [ext_resource type="Texture2D" uid="uid://4bh5xvf5c2l4" path="res://ArteVisual/ph_BarraRelleno.png" id="11_i0av5"]
@@ -51,6 +52,7 @@ offset_top = 105.0
 offset_right = 1433.0
 offset_bottom = 131.0
 scale = Vector2(1.36716, 1.34723)
+theme = ExtResource("9_xcos8")
 text = "PLACEHOLDER"
 vertical_alignment = 1
 
@@ -62,6 +64,7 @@ offset_top = 168.0
 offset_right = 1433.0
 offset_bottom = 194.0
 scale = Vector2(1.36, 1.28)
+theme = ExtResource("9_xcos8")
 text = "PLACEHOLDER"
 vertical_alignment = 1
 

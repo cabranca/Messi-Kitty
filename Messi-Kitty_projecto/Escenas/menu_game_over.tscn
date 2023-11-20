@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bk2b1iq7pot2m"]
+[gd_scene load_steps=3 format=3 uid="uid://bk2b1iq7pot2m"]
 
-[ext_resource type="Script" path="res://MenuGameOver.gd" id="1_72ocb"]
+[ext_resource type="Script" path="res://Codigo/MenuGameOver.gd" id="1_72ocb"]
+[ext_resource type="Theme" uid="uid://ddoqlysjpkcmb" path="res://ArteVisual/TemasGodot/TemaletraChica.tres" id="2_inkku"]
 
 [node name="MenuGameOver" type="Node"]
 script = ExtResource("1_72ocb")
@@ -13,6 +14,7 @@ offset_right = 958.0
 offset_bottom = 122.0
 size_flags_horizontal = 4
 size_flags_vertical = 0
+theme = ExtResource("2_inkku")
 
 [node name="ColorRect" type="ColorRect" parent="Pantalla"]
 modulate = Color(1, 1, 1, 0.501961)
