@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://cgt7wikjou02k"]
+
+[ext_resource type="FontFile" uid="uid://djitvor664t1r" path="res://ArteVisual/UI/Fuentes/Boleh.otf" id="1_ps50c"]
+
+[resource]
+default_font = ExtResource("1_ps50c")
+default_font_size = 85
+Label/colors/font_color = Color(0, 0, 0, 1)

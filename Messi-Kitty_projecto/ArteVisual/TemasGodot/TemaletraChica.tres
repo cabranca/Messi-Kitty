@@ -1,0 +1,17 @@
+[gd_resource type="Theme" load_steps=4 format=3 uid="uid://ddoqlysjpkcmb"]
+
+[ext_resource type="FontFile" uid="uid://daqgn1815a7h3" path="res://ArteVisual/UI/Fuentes/ComicNeue-Bold.ttf" id="1_3ft16"]
+[ext_resource type="StyleBox" uid="uid://cc40ykuvsymg1" path="res://ArteVisual/TemasGodot/CajitaBoton.tres" id="1_ubxmh"]
+[ext_resource type="StyleBox" uid="uid://c1wq1t3867khv" path="res://ArteVisual/TemasGodot/CajitaBotonB.tres" id="2_d37cp"]
+
+[resource]
+default_font = ExtResource("1_3ft16")
+default_font_size = 24
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0.239216, 0.239216, 0.239216, 1)
+Button/styles/disabled = ExtResource("1_ubxmh")
+Button/styles/focus = ExtResource("1_ubxmh")
+Button/styles/hover = ExtResource("2_d37cp")
+Button/styles/normal = ExtResource("1_ubxmh")
+Button/styles/pressed = ExtResource("1_ubxmh")
