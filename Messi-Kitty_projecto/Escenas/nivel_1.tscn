@@ -32,9 +32,9 @@
 [ext_resource type="AudioStream" uid="uid://bmr3aub2qa0qt" path="res://Audio/fx/caida desorden  2.wav" id="26_fpqru"]
 [ext_resource type="Texture2D" uid="uid://b308jdqfstbqq" path="res://ArteVisual/Props/cornetita_props.png" id="27_yqkf7"]
 [ext_resource type="Texture2D" uid="uid://dm5jug1l1v8ei" path="res://ArteVisual/Props/sombrero_props_transparente.png" id="28_y1qqt"]
-[ext_resource type="Texture2D" uid="uid://qt4b2kpkwfxt" path="res://ArteVisual/Props/lapicero.png" id="31_37t37"]
+[ext_resource type="Texture2D" path="res://ArteVisual/Props/lapicero.png" id="31_37t37"]
 [ext_resource type="AudioStream" uid="uid://fmpfqqb3i87v" path="res://Audio/fx/maullido.wav" id="32_jenid"]
-[ext_resource type="Texture2D" uid="uid://c3lc60x42a6vd" path="res://ArteVisual/Props/lapiceroroto.png" id="32_vr22e"]
+[ext_resource type="Texture2D" path="res://ArteVisual/Props/lapiceroroto.png" id="32_vr22e"]
 [ext_resource type="AudioStream" uid="uid://lt181vyatuuv" path="res://Audio/fx/caida madera.wav" id="33_hcvoc"]
 
 [node name="Nivel1" type="Node"]
