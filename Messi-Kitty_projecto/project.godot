@@ -17,7 +17,6 @@ config/icon="res://logo.svg"
 
 [autoload]
 
-Autoload="*res://Codigo/autoload.gd"
 Variables="*res://Codigo/variables.gd"
 
 [display]

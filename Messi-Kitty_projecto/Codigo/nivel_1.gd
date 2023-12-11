@@ -47,7 +47,7 @@ func new_game():
 	barraBasura.max_value = condicionDerrota
 
 
-func _process(delta):
+func _process(_delta):
 	if Variables.contadorBasura == condicionDerrota:
 		game_over()	
 	
@@ -83,15 +83,19 @@ func _on_basura_timer_timeout():
 	# Seteo la posicion incial donde sea que este el indice de spawn
 	var availableIndexFound = false
 	while(!availableIndexFound):
-		Variables.index = int(round(randf() * 16))
-		if Variables.index == 16:
-			Variables.index = 15
+		var randomNumer =  int(round(randf() * 16))
+		if randomNumer == 16:
+			randomNumer = 15
+		Variables.index = randomNumer
 		if !Variables.spawnPositionsVisited[Variables.index]:
 			availableIndexFound = true
+			print(Variables.index)
+			print(Variables.spawnPositionsVisited[Variables.index])
+			Variables.spawnPositionsVisited[Variables.index] = true
 			
+	print(Variables.index)
 	messi.position = spawnPositions[Variables.index]["pos"]
 	var animation = messi.find_child("AnimatedSprite2D")
-	# Falta la posibilidad de otra animacion
 	animation.play(spawnPositions[Variables.index]["animacion"])
 	
 	# Cada 3 apariciones que creo hago que una tenga sonido
@@ -136,7 +140,7 @@ func init_basura():
 	
 
 
-func _input(ev):
+func _input(_ev):
 	if Input.is_action_just_released("Salir"):
 		if Variables.menuAbierto:
 			cerrar_menu_pausa()

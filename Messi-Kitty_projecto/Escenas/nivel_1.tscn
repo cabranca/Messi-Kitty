@@ -1,8 +1,8 @@
-[gd_scene load_steps=37 format=3 uid="uid://dvbbttjxg3ek7"]
+[gd_scene load_steps=39 format=3 uid="uid://dvbbttjxg3ek7"]
 
 [ext_resource type="Script" path="res://Codigo/nivel_1.gd" id="1_33hxw"]
-[ext_resource type="PackedScene" uid="uid://c6bwkdx64ojnm" path="res://Escenas/basura.tscn" id="2_rsyts"]
 [ext_resource type="PackedScene" uid="uid://b4ik250edspbw" path="res://Escenas/menu_pausa.tscn" id="3_t8oy6"]
+[ext_resource type="Texture2D" uid="uid://dwkinx6kjtu6x" path="res://icon.svg" id="3_tm3d5"]
 [ext_resource type="Script" path="res://Codigo/Fondo.gd" id="4_lp7fj"]
 [ext_resource type="Texture2D" uid="uid://brcjygp4r5eyr" path="res://ArteVisual/Escenario final completo.png" id="5_mgret"]
 [ext_resource type="AudioStream" uid="uid://bngqb4b4yw25t" path="res://Audio/Messi Kitty, Gameplay Song.wav" id="7_356pt"]
@@ -37,9 +37,25 @@
 [ext_resource type="Texture2D" uid="uid://c3lc60x42a6vd" path="res://ArteVisual/Props/lapiceroroto.png" id="32_vr22e"]
 [ext_resource type="AudioStream" uid="uid://lt181vyatuuv" path="res://Audio/fx/caida madera.wav" id="33_hcvoc"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2s1yh"]
+size = Vector2(12.4, 12.4)
+
+[sub_resource type="PackedScene" id="PackedScene_c5tdu"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("Basura", "scale", "input_pickable", "script", "StaticBody2D", "CollisionShape2D", "position", "shape", "Sprite2D", "texture", "GomaBorrando", "stream", "AudioStreamPlayer"),
+"node_count": 4,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 4, 0, -1, 3, 1, 0, 2, 1, 3, 2, 0, 0, 0, 5, 5, -1, 2, 6, 3, 7, 4, 0, 0, 0, 8, 8, -1, 2, 1, 5, 9, 6, 0, 0, 0, 12, 10, -1, 1, 11, 7, 0),
+"variants": [Vector2(5, 5), true, ExtResource("14_byet4"), Vector2(-1.90735e-07, -1.90735e-07), SubResource("RectangleShape2D_2s1yh"), Vector2(0.1, 0.1), ExtResource("3_tm3d5"), ExtResource("16_ajr25")],
+"version": 3
+}
+
 [node name="Nivel1" type="Node"]
 script = ExtResource("1_33hxw")
-basura_scene = ExtResource("2_rsyts")
+basura_scene = SubResource("PackedScene_c5tdu")
 menu_pausa_escena = ExtResource("3_t8oy6")
 messi_escena = ExtResource("10_r3kik")
 

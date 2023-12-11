@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dgu5nmwfd1g87"]
+[gd_scene load_steps=16 format=3 uid="uid://dgu5nmwfd1g87"]
 
 [ext_resource type="Script" path="res://Codigo/autoload.gd" id="1_35ret"]
 [ext_resource type="Theme" uid="uid://ddoqlysjpkcmb" path="res://ArteVisual/TemasGodot/TemaletraChica.tres" id="2_eeopn"]
@@ -7,14 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://dpdcquem1gidy" path="res://ArteVisual/UI/PantallaPrincipal/boton play apretado.png" id="5_damc7"]
 [ext_resource type="Texture2D" uid="uid://dedcixe8tn4mw" path="res://ArteVisual/UI/PantallaPrincipal/boton salir.png" id="6_h7pq0"]
 [ext_resource type="Texture2D" uid="uid://b4b21gckwifho" path="res://ArteVisual/UI/PantallaPrincipal/boton salir apretado.png" id="7_2n3dw"]
-[ext_resource type="Script" path="res://Codigo/ColitaGato.gd" id="7_3ms31"]
 [ext_resource type="Texture2D" uid="uid://q4qv8p5iup3l" path="res://ArteVisual/UI/PantallaPrincipal/Pantalla inicio_0_color_cola 1.png" id="8_x7efg"]
 [ext_resource type="Texture2D" uid="uid://15oxc0t5ry57" path="res://ArteVisual/UI/PantallaPrincipal/Pantalla inicio_0_color_cola 2.png" id="9_hsk3b"]
 [ext_resource type="Texture2D" uid="uid://dh3hadqjuy7bh" path="res://ArteVisual/UI/PantallaPrincipal/Pantalla inicio_0_color_cola 3.png" id="10_r1pvj"]
 [ext_resource type="Texture2D" uid="uid://bkqy6i5e7b86" path="res://ArteVisual/UI/PantallaPrincipal/Pantalla inicio_0_color_cola 4.png" id="11_7lsbc"]
 [ext_resource type="Texture2D" uid="uid://tkpqyokvutyc" path="res://ArteVisual/UI/PantallaPrincipal/Pantalla inicio_0_color_cola 5.png" id="12_3kiot"]
 [ext_resource type="AudioStream" uid="uid://crtxfqde4g4h8" path="res://Audio/Messi_Kitty_menu_song.wav" id="14_ryu67"]
-[ext_resource type="Script" path="res://Codigo/MusicaMenu.gd" id="14_tvp7s"]
 [ext_resource type="AudioStream" uid="uid://4sootctac88x" path="res://Audio/fx/play_button_click.wav" id="16_hubsr"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8f6ci"]
@@ -110,12 +108,12 @@ text = "Ver cinemática"
 [node name="ColitaGato" type="AnimatedSprite2D" parent="."]
 position = Vector2(417, 970)
 sprite_frames = SubResource("SpriteFrames_8f6ci")
-frame_progress = 0.597731
-script = ExtResource("7_3ms31")
+autoplay = "default"
+frame_progress = 0.352183
 
 [node name="MusicaMenu" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_ryu67")
-script = ExtResource("14_tvp7s")
+autoplay = true
 
 [node name="PlayButtonClick" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("16_hubsr")

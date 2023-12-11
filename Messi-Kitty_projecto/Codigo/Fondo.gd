@@ -11,8 +11,8 @@ func _ready():
 	enElCentro = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-"func _process(delta):
-	pass"
+#func _process(delta):
+	#pass
 
 # Código para cambiar de lugar la pantalla y ocultar las flechitas.
 func _on_flecha_iz_button_down():
