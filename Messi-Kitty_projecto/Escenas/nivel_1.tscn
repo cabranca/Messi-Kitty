@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dwkinx6kjtu6x" path="res://icon.svg" id="3_tm3d5"]
 [ext_resource type="Script" path="res://Codigo/Fondo.gd" id="4_lp7fj"]
 [ext_resource type="Texture2D" uid="uid://brcjygp4r5eyr" path="res://ArteVisual/Escenario final completo.png" id="5_mgret"]
-[ext_resource type="AudioStream" uid="uid://bngqb4b4yw25t" path="res://Audio/Messi Kitty, Gameplay Song.wav" id="7_356pt"]
+[ext_resource type="AudioStream" uid="uid://dgnpagmurjf8j" path="res://Audio/Messi-Kitty_-Gameplay-Song.mp3" id="8_2eq7c"]
 [ext_resource type="Theme" uid="uid://ddoqlysjpkcmb" path="res://ArteVisual/TemasGodot/TemaletraChica.tres" id="9_xcos8"]
 [ext_resource type="Texture2D" uid="uid://cv5mlolnnfywj" path="res://ArteVisual/UI/Flechas.png" id="10_8jfhf"]
 [ext_resource type="PackedScene" uid="uid://bixtxdklmw80y" path="res://Escenas/messi.tscn" id="10_r3kik"]
@@ -32,9 +32,9 @@
 [ext_resource type="AudioStream" uid="uid://bmr3aub2qa0qt" path="res://Audio/fx/caida desorden  2.wav" id="26_fpqru"]
 [ext_resource type="Texture2D" uid="uid://b308jdqfstbqq" path="res://ArteVisual/Props/cornetita_props.png" id="27_yqkf7"]
 [ext_resource type="Texture2D" uid="uid://dm5jug1l1v8ei" path="res://ArteVisual/Props/sombrero_props_transparente.png" id="28_y1qqt"]
-[ext_resource type="Texture2D" path="res://ArteVisual/Props/lapicero.png" id="31_37t37"]
+[ext_resource type="Texture2D" uid="uid://qt4b2kpkwfxt" path="res://ArteVisual/Props/lapicero.png" id="31_37t37"]
 [ext_resource type="AudioStream" uid="uid://fmpfqqb3i87v" path="res://Audio/fx/maullido.wav" id="32_jenid"]
-[ext_resource type="Texture2D" path="res://ArteVisual/Props/lapiceroroto.png" id="32_vr22e"]
+[ext_resource type="Texture2D" uid="uid://c3lc60x42a6vd" path="res://ArteVisual/Props/lapiceroroto.png" id="32_vr22e"]
 [ext_resource type="AudioStream" uid="uid://lt181vyatuuv" path="res://Audio/fx/caida madera.wav" id="33_hcvoc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2s1yh"]
@@ -70,7 +70,7 @@ scale = Vector2(1, 0.999999)
 texture = ExtResource("5_mgret")
 
 [node name="MainTrack" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("7_356pt")
+stream = ExtResource("8_2eq7c")
 autoplay = true
 
 [node name="Ui" type="Node2D" parent="."]

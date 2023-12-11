@@ -22,13 +22,14 @@ var spawnPositions = [
 	{"pos": Vector2(-150, 867), "animacion": "saltando", "nodo": "Termo"}, # Termo
 	{"pos": Vector2(2615, 777), "animacion": "saltando", "nodo": "Portarretratos"}, # Portarretrato
 	{"pos": Vector2(2872, 934), "animacion": "lamiendo", "nodo": "Alfombra"}, # Alfombra
-	{"pos": Vector2(-687, 951), "animacion": "maullido", "nodo": "Nada"}, # Maullido 1
-	{"pos": Vector2(225, 654), "animacion": "maullido", "nodo": "Nada"}, # Maullido 2
-	{"pos": Vector2(3038, 549), "animacion": "maullido", "nodo": "Nada"}, # Maullido 3
+	{"pos": Vector2(-687, 951), "animacion": "maullando", "nodo": "Nada"}, # Maullido 1
+	{"pos": Vector2(225, 654), "animacion": "maullando", "nodo": "Nada"}, # Maullido 2
+	{"pos": Vector2(3038, 549), "animacion": "maullando", "nodo": "Nada"}, # Maullido 3
 	{"pos": Vector2(138, 656), "animacion": "tirando", "nodo": "Lapicero"}
 ]
 
 var condicionDerrota = 12
+var lastIndex
 
 
 func _ready():
@@ -89,11 +90,12 @@ func _on_basura_timer_timeout():
 		Variables.index = randomNumer
 		if !Variables.spawnPositionsVisited[Variables.index]:
 			availableIndexFound = true
-			print(Variables.index)
+			print("EN EL WHILE ", Variables.index)
 			print(Variables.spawnPositionsVisited[Variables.index])
 			Variables.spawnPositionsVisited[Variables.index] = true
+			lastIndex = randomNumer
 			
-	print(Variables.index)
+	print("SALI DEL WHILE ", Variables.index)
 	messi.position = spawnPositions[Variables.index]["pos"]
 	var animation = messi.find_child("AnimatedSprite2D")
 	animation.play(spawnPositions[Variables.index]["animacion"])
@@ -122,6 +124,7 @@ func init_basura():
 		var prop = get_node("Props/" + nombreNodo)
 		prop.find_child("Sprite1").visible = false
 		prop.find_child("Sprite2").visible = true
+		prop.index = lastIndex
 		# Aumento el contador de basura
 		Variables.contadorBasura += 1
 	

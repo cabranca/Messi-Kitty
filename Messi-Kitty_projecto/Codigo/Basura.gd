@@ -1,5 +1,6 @@
 extends StaticBody2D
 
+@export var index : int
 
 # Called when the node enters the scene tree for the first time.
 #func _ready():
@@ -15,11 +16,11 @@ func _input_event(_viewport, event, _shape_idx):
 	if sprite2.visible:
 		if event is InputEventMouseButton:
 			if event.button_index == MOUSE_BUTTON_LEFT:
-				print("click")
+				print("clickEADO")
 				$GomaBorrando.play()
 				Variables.contadorBasura -= 1
 				Variables.puntaje += 1
 				sprite2.visible = false
 				var sprite1 = find_child("Sprite1")
 				sprite1.visible = true
-				Variables.spawnPositionsVisited[Variables.index] = false
+				Variables.spawnPositionsVisited[index] = false
