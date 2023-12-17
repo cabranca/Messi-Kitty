@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cx6tenpdcuxfg" path="res://ArteVisual/UI/PantallagameOver/puntuacion.png" id="4_h0pdv"]
 [ext_resource type="Texture2D" uid="uid://dedcixe8tn4mw" path="res://ArteVisual/UI/PantallaPrincipal/boton salir.png" id="5_p1b51"]
 [ext_resource type="Texture2D" uid="uid://b4b21gckwifho" path="res://ArteVisual/UI/PantallaPrincipal/boton salir apretado.png" id="6_5umvi"]
-[ext_resource type="AudioStream" uid="uid://dr0qfm5mkw4qj" path="res://Audio/gameover melodia.wav" id="9_bingy"]
+[ext_resource type="AudioStream" uid="uid://dr0qfm5mkw4qj" path="res://Audio/fx/gameover melodia.wav" id="9_bingy"]
 [ext_resource type="Texture2D" uid="uid://cqoh0o2g8qxyw" path="res://ArteVisual/UI/PantallagameOver/sentado0014.png" id="10_8pisp"]
 
 [node name="MenuGameOver" type="Node"]

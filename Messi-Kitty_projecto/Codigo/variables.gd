@@ -12,3 +12,10 @@ var spawnPositionsVisited = [
 	]
 	
 var index = 0
+
+func reiniciar():
+	contadorBasura = 0
+	puntaje = 0
+	menuAbierto = false
+	for i in range(spawnPositionsVisited.size()):
+		spawnPositionsVisited[i] = false

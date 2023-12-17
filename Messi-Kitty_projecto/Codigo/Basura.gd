@@ -16,7 +16,6 @@ func _input_event(_viewport, event, _shape_idx):
 	if sprite2.visible:
 		if event is InputEventMouseButton:
 			if event.button_index == MOUSE_BUTTON_LEFT:
-				print("clickEADO")
 				$GomaBorrando.play()
 				Variables.contadorBasura -= 1
 				Variables.puntaje += 1

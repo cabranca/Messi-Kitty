@@ -37,9 +37,7 @@ func _ready():
 	
 
 func new_game():
-	Variables.puntaje = 0
-	Variables.contadorBasura = 0
-	Variables.menuAbierto = false
+	Variables.reiniciar()
 	$Ui/Puntaje.text = puntajePrefix + str(Variables.puntaje)
 	$Ui/ContadorBasura.text = contadorBasuraPrefix + str(Variables.contadorBasura)
 	$BasuraTimer.start()
@@ -51,6 +49,7 @@ func new_game():
 func _process(_delta):
 	if Variables.contadorBasura == condicionDerrota:
 		game_over()	
+		return
 	
 	
 	if messiOnScene:
@@ -90,12 +89,9 @@ func _on_basura_timer_timeout():
 		Variables.index = randomNumer
 		if !Variables.spawnPositionsVisited[Variables.index]:
 			availableIndexFound = true
-			print("EN EL WHILE ", Variables.index)
-			print(Variables.spawnPositionsVisited[Variables.index])
 			Variables.spawnPositionsVisited[Variables.index] = true
 			lastIndex = randomNumer
-			
-	print("SALI DEL WHILE ", Variables.index)
+	
 	messi.position = spawnPositions[Variables.index]["pos"]
 	var animation = messi.find_child("AnimatedSprite2D")
 	animation.play(spawnPositions[Variables.index]["animacion"])

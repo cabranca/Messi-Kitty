@@ -176,6 +176,7 @@ scale = Vector2(0.25, 0.25)
 texture = ExtResource("16_0qj44")
 
 [node name="Sprite2" type="Sprite2D" parent="Props/Planta"]
+visible = false
 position = Vector2(515, 457)
 scale = Vector2(0.25, 0.25)
 texture = ExtResource("17_x5w0u")
